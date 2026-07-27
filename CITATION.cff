@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "Please cite the versioned Zenodo record for this dataset when a DOI is available."
+type: dataset
+title: "Supporting data for a genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in Cannabis sativa"
+abstract: >-
+  Query definitions, search assignments, staged validation results, retained
+  candidate sequences, expression cross-references, and PF01053 phylogenetic
+  artifacts supporting a survey of Cannabis sativa protein candidates.
+authors:
+  - family-names: Maminakis
+    given-names: Emanuel
+    affiliation: Cannamatrix Inc.
+  - family-names: Geffen
+    given-names: Logan
+    affiliation: Cannamatrix Inc.
+  - family-names: Barbosa-Xavier
+    given-names: Kevelin
+    affiliation: Cannamatrix Inc.
+  - family-names: Sharif
+    given-names: Suliman
+    affiliation: Cannamatrix Inc.
+repository-code: "https://github.com/Cannamatrix-team/cannabis-vsc-candidate-survey"
+license: CC-BY-4.0
+version: 0.1.0
+keywords:
+  - Cannabis sativa
+  - sulfur metabolism
+  - volatile sulfur compounds
+  - protein candidate survey
+  - HMMER
+  - Pfam

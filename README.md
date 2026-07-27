@@ -1,6 +1,6 @@
 # Cannabis VSC candidate survey
 
-Data and supporting analysis artifacts for the manuscript:
+Supporting data for the manuscript:
 
 > A genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in *Cannabis sativa*
 
@@ -8,40 +8,49 @@ Authors: Emanuel Maminakis, Logan Geffen, Kevelin Barbosa-Xavier, and Suliman Sh
 
 ## Status
 
-This is a pre-release working repository. No GitHub release or Zenodo DOI has been created yet. Contents may change before the manuscript-supporting release is frozen.
+This is a pre-release working repository. No GitHub release or Zenodo DOI has been created yet. The first manuscript-supporting release will freeze the reviewed contents as a versioned Zenodo record.
 
-No reuse license has been selected yet.
+## Evidence package
 
-## Current contents
+The files preserve the path from the stated query panel to the paper-specific catalog:
 
-- `data/candidate_catalog_941.tsv`: the paper-specific catalog of 941 retained GMO v1 proteins across 20 reporting categories.
-- `data/candidate_sequences_941.fasta`: full-length amino-acid sequences for those 941 proteins.
-- `data/candidate_counts_by_category.tsv`: counts and hypothesis-group crosswalk for the 20 categories.
-- `data/expression/`: exact-identity expression-atlas mappings and identity-threshold sensitivity results.
-- `phylogeny/pf01053/`: alignment, tree, reference metadata, and nearest-reference assignments for the six PF01053 candidates.
+1. `queries/query_panel.tsv` documents the 23 target bins, Pfam profiles, full-length reference queries, biochemical contexts, admission rule, and any post-search resolution step.
+2. `data/search_assignments_1005.tsv` contains the 1,005 initial target-bin assignments, representing 975 unique GMO v1 proteins. A protein may occur in more than one target bin. The support columns distinguish Pfam-only, reference-only, and dual-route hits.
+3. `data/candidate_stage_ledger_975.tsv` provides one row per unique protein after family resolution and carries the motif, expected-domain, gate, and final outcome fields through the validation stages.
+4. `data/candidate_catalog_941.tsv` is the final paper-specific catalog of 941 retained proteins across 20 reporting categories.
+5. `data/candidate_sequences_941.fasta` contains the corresponding full-length amino-acid sequences.
+6. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
 
-The initial repository deliberately excludes the complete private analysis repository, the full 55,790-protein GMO v1 input proteome, Pfam libraries, large GWAS intermediates, and manuscript audit/session artifacts.
+The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
-## Candidate catalog construction
+## Search and validation details
 
-The canonical analysis manifest contained 1,046 retained rows across 21 categories. The final manuscript does not report the 105 AAT rows, leaving 941 proteins across its 20 reporting categories. `candidate_catalog_941.tsv` is that exact paper-specific subset joined to the corresponding final-pass validation fields by `gene_id`.
+Searches were run with HMMER 3.4. Candidate extraction retained hits with a bit score of at least 50 and an E-value of at most 1e-5 from any Pfam-profile or full-length-reference search listed for that target bin. `search_assignments_1005.tsv` reconstructs the passing search route from the original HMMER tabular outputs at those thresholds.
 
-The catalog contains:
-
-- discovery fields: candidate identifier, reporting category, search source, discovery round, sequence scope, matched protein, HMMER score and E-value, and sequence length;
-- PF01053 resolution fields: original family pool, resolution group and method, status, nearest reference, and nearest-reference family;
-- validation fields: MEME/FIMO status, motif support, expected-domain status, annotation flags, active-gate flags, and final-pass status.
-
-The two MGL-nearest proteins have blank `pfam_status` values because the generated MGL-nearest reporting category had no configured expected-domain rule. Both sequences carry PF01053 and were retained by the gate default, as described in the manuscript.
+Overlapping PF01053 search bins were resolved with the joint maximum-likelihood phylogeny in `phylogeny/pf01053/`. The stage ledger then joins the resolved assignments to the MEME/FIMO motif results, expected-domain validation, and final gate by `gene_id`. It contains 975 motif records, including one explicitly flagged singleton that was not motif-evaluable, and 973 expected-domain records; the two absent records are the MGL-nearest cases described above.
 
 ## Expression tables
 
-The stringent expression cross-reference used a highest-bitscore BLASTp HSP at 100% amino-acid identity across at least 80% of the GMO query. It produced 168 candidate mappings to 128 distinct Cannabis Expression Atlas genes.
+`data/expression/` contains exact-identity expression-atlas mappings and identity-threshold sensitivity results. The stringent cross-reference used the highest-bitscore BLASTp HSP at 100% amino-acid identity across at least 80% of the GMO query, producing 168 candidate mappings to 128 distinct Cannabis Expression Atlas genes.
 
-`expression_identity_sensitivity.tsv` reports how the mapping counts change at lower identity thresholds. The source atlas is described by Barbosa-Xavier et al. (2024), DOI: [10.1111/ppl.70010](https://doi.org/10.1111/ppl.70010).
+The source atlas is described by Barbosa-Xavier et al. (2024), DOI: [10.1111/ppl.70010](https://doi.org/10.1111/ppl.70010).
 
-## Provenance
+## Provenance and upstream data
 
-The underlying search and annotation artifacts came from CannamatrixAI commit `ca6a37a5240e8e0c85b29912d9136fc087cd7d1d` on branch `KB-VSC_pipeline_validation`. GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0).
+The underlying search and annotation artifacts came from CannamatrixAI commit `ca6a37a5240e8e0c85b29912d9136fc087cd7d1d` on branch `KB-VSC_pipeline_validation`.
 
-Checksums for the current files are recorded in `SHA256SUMS`.
+GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The source annotation dataset is available from Figshare at DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1). The complete 55,790-protein input proteome is not duplicated here; this package includes only the 941 paper-specific sequences.
+
+Pfam profile identifiers and versions are recorded in `queries/query_panel.tsv`, but the Pfam libraries themselves are not redistributed. Full-length reference queries are identified by UniProt accession and entry name. See `THIRD_PARTY_NOTICE.md` for source-specific attribution and licensing.
+
+The complete private analysis repository, large GWAS intermediates, and manuscript audit/session artifacts are not part of this evidence package.
+
+## Citation and Zenodo metadata
+
+`CITATION.cff` supplies GitHub-readable citation metadata. `.zenodo.json` supplies the metadata Zenodo will use when a tagged GitHub release is archived. After Zenodo creates the first record, its version DOI can be added to the repository metadata for subsequent releases; no DOI is claimed in this pre-release repository.
+
+## License and integrity
+
+Original tables, documentation, and selection/arrangement in this repository are licensed under [CC BY 4.0](LICENSE). Third-party source materials retain their original terms as described in `THIRD_PARTY_NOTICE.md`.
+
+`SHA256SUMS` records SHA-256 checksums for every distributed file.
