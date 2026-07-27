@@ -1,0 +1,7 @@
+gene_id	assigned_family	nearest_reference_id	nearest_reference_family	nearest_reference_distance	family_resolution_method	family_resolution_status
+GMO.00000743.v1.g064290.t1	CBL	A0A7J6FLL3	CBL	0.003930804800000001	phylogeny_nearest_reference	resolved
+GMO.00001343.v1.g162120.t1	CGS	A0A803QMI1	CGS	2.4796e-06	phylogeny_nearest_reference	resolved
+GMO.00001385.v1.g173130.t1	CGS	A0A803QMI1	CGS	0.0	phylogeny_nearest_reference	resolved
+GMO.00001695.v1.g225230.t1	MGL	A0A803PP87	MGL	5.0086e-06	phylogeny_nearest_reference	resolved
+GMO.00002271.v1.g399560.t1	CBL	A0A7J6FLL3	CBL	2.4796e-06	phylogeny_nearest_reference	resolved
+GMO.00002556.v1.g618800.t1	MGL	A0A803PP87	MGL	0.0	phylogeny_nearest_reference	resolved

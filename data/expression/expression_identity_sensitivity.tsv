@@ -1,0 +1,7 @@
+minimum_percent_identity	candidate_mappings	unique_atlas_genes	tissue_specific_candidate_mappings	root_specific_candidate_mappings	trichome_specific_candidate_mappings	candidate_mappings_with_any_trichome_label
+100	168	128	36	14	8	8
+99	440	267	104	52	15	19
+98	584	319	133	66	20	24
+95	695	361	155	75	26	30
+90	795	405	183	88	38	42
+80	860	423	193	96	38	44

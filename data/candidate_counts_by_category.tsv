@@ -1,0 +1,21 @@
+hypothesis_group	retained_search_bin	original_pipeline_slug	candidate_count
+Sulfur amino-acid and glutathione-supply context	S-adenosylmethionine synthase (SAMS) architecture (PF00438 + PF02772 + PF02773)	sams	2
+Sulfur amino-acid and glutathione-supply context	PF01053 nearest-reference CGS bin	cgs	2
+Sulfur amino-acid and glutathione-supply context	PF01053 nearest-reference CBL bin	cbl	2
+Sulfur amino-acid and glutathione-supply context	Glutamate-cysteine ligase (GSH1) domain (PF04107)	gsh1	2
+Sulfur amino-acid and glutathione-supply context	Glutathione synthetase (GSH2) architecture (PF03199 + PF03917)	gsh2	1
+Sulfur amino-acid and glutathione-supply context	PF00291 PALP-domain bin	oastl	33
+Conjugation, transfer, and redox context	GST_N-domain bin (PF02798)	gst	83
+Conjugation, transfer, and redox context	GGT-domain bin (PF01019)	ggt	5
+Conjugation, transfer, and redox context	UDPGT-domain bin (PF00201)	ugt	218
+Conjugation, transfer, and redox context	SULT-domain bin (PF00685)	sult	22
+Conjugation, transfer, and redox context	FMO-like-domain bin (PF00743)	fmo	40
+Conjugation, transfer, and redox context	Rhodanese-domain bin (PF00581)	rhodanese	16
+Sulfur-release and comparative reference architectures	PF01053 nearest-reference MGL bin	mgl	2
+Sulfur-release and comparative reference architectures	Alliinase/ACC-synthase-like bin (PF04863 + PF04864)	alliinase	5
+Sulfur-release and comparative reference architectures	Polyketide_cyc2-domain bin (PF10604)	lf_synthase	8
+Sulfur-release and comparative reference architectures	GH1 beta-glucosidase (PF00232)	myrosinase	44
+Oxylipin and volatile-product context	LOX-architecture bin (PF00305 + PF01477)	lox	30
+Oxylipin and volatile-product context	P450-domain bin (PF00067)	aos_hpl	359
+Oxylipin and volatile-product context	AOC-domain bin (PF06351)	aoc	6
+Oxylipin and volatile-product context	ADH-architecture bin (PF00107 + PF08240)	adh	61
