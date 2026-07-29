@@ -1,0 +1,39 @@
+{
+  "title": "Supporting data for a genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in Cannabis sativa",
+  "upload_type": "dataset",
+  "description": "Query definitions, search assignments, staged validation results, retained candidate sequences, expression cross-references, and PF01053 phylogenetic artifacts supporting a survey of Cannabis sativa protein candidates.",
+  "creators": [
+    {
+      "name": "Maminakis, Emanuel",
+      "affiliation": "Cannamatrix Inc."
+    },
+    {
+      "name": "Geffen, Logan",
+      "affiliation": "Cannamatrix Inc."
+    },
+    {
+      "name": "Barbosa-Xavier, Kevelin",
+      "affiliation": "Cannamatrix Inc."
+    },
+    {
+      "name": "Sharif, Suliman",
+      "affiliation": "Cannamatrix Inc."
+    }
+  ],
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "version": "0.1.0",
+  "keywords": [
+    "Cannabis sativa",
+    "sulfur metabolism",
+    "volatile sulfur compounds",
+    "protein candidate survey",
+    "HMMER",
+    "Pfam"
+  ],
+  "references": [
+    "Lynch et al. (2025), Cannabis pangenome, https://doi.org/10.1038/s41586-025-09065-0",
+    "Cannabis Pangenome Annotation Data, https://doi.org/10.25452/figshare.plus.25909024.v1",
+    "Barbosa-Xavier et al. (2024), Cannabis Expression Atlas, https://doi.org/10.1111/ppl.70010"
+  ]
+}
