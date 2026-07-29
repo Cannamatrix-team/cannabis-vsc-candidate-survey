@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite this dataset using the versioned Zenodo DOI."
 type: dataset
-title: "Supporting data for a genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in Cannabis sativa"
+title: "Supporting data for “Computational Identification of Candidate Gene Families for Volatile Sulfur Compound Biosynthesis in Cannabis sativa Using Profile Hidden Markov Models”"
 abstract: >-
   Query definitions, search assignments, staged validation results, retained
   candidate sequences, expression cross-references, and PF01053 phylogenetic

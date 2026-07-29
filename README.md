@@ -4,7 +4,7 @@
 
 Supporting data for the manuscript:
 
-> A genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in *Cannabis sativa*
+> Computational Identification of Candidate Gene Families for Volatile Sulfur Compound Biosynthesis in *Cannabis sativa* Using Profile Hidden Markov Models
 
 Authors: Emanuel Maminakis, Logan Geffen, Kevelin Barbosa-Xavier, and Suliman Sharif.
 
