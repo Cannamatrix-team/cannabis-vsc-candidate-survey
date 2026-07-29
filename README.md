@@ -1,5 +1,7 @@
 # Cannabis VSC candidate survey
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21685901.svg)](https://doi.org/10.5281/zenodo.21685901)
+
 Supporting data for the manuscript:
 
 > A genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in *Cannabis sativa*
@@ -8,7 +10,7 @@ Authors: Emanuel Maminakis, Logan Geffen, Kevelin Barbosa-Xavier, and Suliman Sh
 
 ## Status
 
-This is a pre-release working repository. No GitHub release or Zenodo DOI has been created yet. The first manuscript-supporting release will freeze the reviewed contents as a versioned Zenodo record.
+Version 0.1.0 is the first manuscript-supporting release and is archived on Zenodo at [10.5281/zenodo.21685901](https://doi.org/10.5281/zenodo.21685901).
 
 ## Evidence package
 
@@ -47,7 +49,7 @@ The complete private analysis repository, large GWAS intermediates, and manuscri
 
 ## Citation and Zenodo metadata
 
-`CITATION.cff` supplies GitHub-readable citation metadata. `.zenodo.json` supplies the metadata Zenodo will use when a tagged GitHub release is archived. After Zenodo creates the first record, its version DOI can be added to the repository metadata for subsequent releases; no DOI is claimed in this pre-release repository.
+`CITATION.cff` supplies GitHub-readable citation metadata and the versioned Zenodo DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived.
 
 ## License and integrity
 

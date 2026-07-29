@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Please cite the versioned Zenodo record for this dataset when a DOI is available."
+message: "Please cite this dataset using the versioned Zenodo DOI."
 type: dataset
 title: "Supporting data for a genome-scale, hypothesis-guided survey of protein candidates relevant to sulfur metabolism and volatile chemistry in Cannabis sativa"
 abstract: >-
@@ -20,6 +20,7 @@ authors:
     given-names: Suliman
     affiliation: Cannamatrix Inc.
 repository-code: "https://github.com/Cannamatrix-team/cannabis-vsc-candidate-survey"
+doi: 10.5281/zenodo.21685901
 license: CC-BY-4.0
 version: 0.1.0
 keywords:
