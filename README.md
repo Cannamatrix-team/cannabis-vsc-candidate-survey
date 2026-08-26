@@ -47,6 +47,22 @@ Pfam profile identifiers and versions are recorded in `queries/query_panel.tsv`,
 
 The complete private analysis repository, large GWAS intermediates, and manuscript audit/session artifacts are not part of this evidence package.
 
+## Reproducibility workflow
+
+The public workflow starts from the deposited tables and provides a fast check of the released result set:
+
+```bash
+make verify-release
+```
+
+This verifies the archived checksums; reconciles the search, stage-ledger, catalog, FASTA, expression, and PF01053 identifiers and counts; and regenerates the two deposited reporting-count tables for comparison. To write those regenerated tables under `build/reporting/`, run:
+
+```bash
+make reporting
+```
+
+Only Python 3 and GNU `sha256sum` are required for this release-level workflow. [Workflow provenance and remaining gaps](workflow/PROVENANCE.md) distinguishes these checks from a full rerun of HMMER, MEME/FIMO, Pfam validation, phylogenetic resolution, and expression-atlas mapping.
+
 ## Citation and Zenodo metadata
 
 `CITATION.cff` supplies GitHub-readable citation metadata and the versioned Zenodo DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived.
