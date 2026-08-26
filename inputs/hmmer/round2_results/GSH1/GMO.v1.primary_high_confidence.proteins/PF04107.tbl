@@ -1,0 +1,15 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002767.v1.g678100.t2 -          GCS2                 PF04107.19  3.2e-107  364.0   0.0  3.8e-107  363.7   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00000720.v1.g052440.t2 -          GCS2                 PF04107.19  7.1e-107  362.8   0.0  8.3e-107  362.6   0.0   1.0   1   0   0   1   1   1   1 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH1/PF04107.hmm
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: hmmsearch -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH1//GMO.v1.primary_high_confidence.proteins/PF04107.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH1//GMO.v1.primary_high_confidence.proteins/PF04107.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH1//GMO.v1.primary_high_confidence.proteins/PF04107.tbl --incE 0.001 -Z 567483 /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH1/PF04107.hmm /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 15:42:31 2026
+# [ok]

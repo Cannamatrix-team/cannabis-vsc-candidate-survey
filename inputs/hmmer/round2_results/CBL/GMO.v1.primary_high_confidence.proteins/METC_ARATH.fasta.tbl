@@ -1,0 +1,20 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002271.v1.g399560.t1 -          sp|P53780|METC_ARATH -           5.6e-225  748.5   0.2  6.7e-225  748.3   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00000743.v1.g064290.t1 -          sp|P53780|METC_ARATH -             4e-224  745.7   0.2  4.6e-224  745.5   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00001343.v1.g162120.t1 -          sp|P53780|METC_ARATH -            7.1e-61  207.9   0.0   9.6e-61  207.5   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00001385.v1.g173130.t1 -          sp|P53780|METC_ARATH -            7.1e-61  207.9   0.0   9.6e-61  207.5   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00001695.v1.g225230.t1 -          sp|P53780|METC_ARATH -            1.3e-38  134.6   0.1   1.7e-38  134.2   0.1   1.1   1   0   0   1   1   1   1 -
+GMO.00002556.v1.g618800.t1 -          sp|P53780|METC_ARATH -            1.3e-38  134.6   0.1   1.7e-38  134.2   0.1   1.1   1   0   0   1   1   1   1 -
+GMO.00002364.v1.g514600.t1 -          sp|P53780|METC_ARATH -               0.13   12.7   0.0       0.3   11.5   0.0   1.5   2   0   0   2   2   2   0 -
+#
+# Program:         phmmer
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/CGL/METC_ARATH.fasta
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: phmmer -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/CGL//GMO.v1.primary_high_confidence.proteins/METC_ARATH.fasta.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/CGL//GMO.v1.primary_high_confidence.proteins/METC_ARATH.fasta.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/CGL//GMO.v1.primary_high_confidence.proteins/METC_ARATH.fasta.tbl --incE 0.001 /Users/agata/Documents/cannamatrix/Project_02/Analysis/CGL/METC_ARATH.fasta /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 16:39:56 2026
+# [ok]

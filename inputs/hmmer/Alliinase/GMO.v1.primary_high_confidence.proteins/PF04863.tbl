@@ -1,0 +1,18 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002363.v1.g510470.t1 -          EGF_alliinase        PF04863.20   6.6e-23   85.7   3.9   1.5e-22   84.5   3.9   1.6   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g098250.t1 -          EGF_alliinase        PF04863.20   2.8e-20   77.2   9.1   1.4e-19   75.0   9.1   2.1   1   1   0   1   1   1   1 -
+GMO.00002363.v1.g510450.t2 -          EGF_alliinase        PF04863.20     6e-20   76.2   9.6   7.7e-12   50.2   0.2   2.5   2   0   0   2   2   2   2 -
+GMO.00001056.v1.g098240.t1 -          EGF_alliinase        PF04863.20   5.2e-18   70.0   5.0   1.3e-17   68.7   5.0   1.7   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g510460.t2 -          EGF_alliinase        PF04863.20   4.6e-09   41.3   7.4   1.1e-08   40.1   7.4   1.7   1   1   0   1   1   1   1 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Results/Alliinase/PF04863.hmm
+# Target file:     /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: hmmsearch -o /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04863.log -A /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04863.sto --tblout /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04863.tbl --incE 0.001 -Z 567483 /Users/agata/Documents/cannamatrix/Results/Alliinase/PF04863.hmm /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Results
+# Date:            Tue Nov 11 13:38:35 2025
+# [ok]

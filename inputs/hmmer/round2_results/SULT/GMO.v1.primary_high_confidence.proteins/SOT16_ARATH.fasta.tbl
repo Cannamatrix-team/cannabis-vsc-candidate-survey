@@ -1,0 +1,36 @@
+#                                                                      --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name            accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ----------  -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002274.v1.g402770.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.4e-83  281.7   0.6   8.7e-83  279.9   0.6   1.6   1   1   0   1   1   1   1 -
+GMO.00002304.v1.g451310.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.4e-83  281.7   0.6   8.7e-83  279.9   0.6   1.6   1   1   0   1   1   1   1 -
+GMO.00001056.v1.g098650.t1 -          sp|Q9C9D0|SOT16_ARATH -            4.9e-83  280.7   0.2   5.9e-83  280.4   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g509930.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.5e-82  278.4   0.3     3e-82  278.1   0.3   1.0   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g509940.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.7e-82  278.3   0.2   3.1e-82  278.1   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00001111.v1.g109930.t1 -          sp|Q9C9D0|SOT16_ARATH -            1.3e-78  266.2   0.3   1.5e-78  266.0   0.3   1.0   1   0   0   1   1   1   1 -
+GMO.00001252.v1.g134800.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.6e-77  261.9   0.2   3.4e-77  261.5   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00002631.v1.g641180.t1 -          sp|Q9C9D0|SOT16_ARATH -            3.3e-77  261.6   0.1   4.3e-77  261.2   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g097290.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.1e-76  258.9   0.7   2.5e-76  258.6   0.7   1.0   1   0   0   1   1   1   1 -
+GMO.00002364.v1.g511360.t1 -          sp|Q9C9D0|SOT16_ARATH -            7.9e-76  257.0   0.6   9.6e-76  256.7   0.6   1.0   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g097330.t1 -          sp|Q9C9D0|SOT16_ARATH -            3.8e-75  254.8   0.6   4.9e-75  254.4   0.6   1.0   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g309640.t1 -          sp|Q9C9D0|SOT16_ARATH -              4e-73  248.1   0.5   4.8e-73  247.9   0.5   1.0   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g309600.t1 -          sp|Q9C9D0|SOT16_ARATH -            2.6e-72  245.5   0.4   3.4e-72  245.1   0.4   1.0   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g309650.t1 -          sp|Q9C9D0|SOT16_ARATH -            1.2e-70  240.0   1.0   1.6e-70  239.5   1.0   1.1   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g309610.t1 -          sp|Q9C9D0|SOT16_ARATH -            7.1e-70  237.4   0.5   8.8e-70  237.1   0.5   1.0   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g309620.t1 -          sp|Q9C9D0|SOT16_ARATH -            8.8e-69  233.8   0.3     9e-67  227.2   0.3   2.0   1   1   0   1   1   1   1 -
+GMO.00001056.v1.g098350.t1 -          sp|Q9C9D0|SOT16_ARATH -            4.9e-68  231.4   0.1   6.2e-68  231.1   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g510350.t1 -          sp|Q9C9D0|SOT16_ARATH -            1.3e-65  223.5   0.2   1.6e-65  223.1   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00001111.v1.g112250.t1 -          sp|Q9C9D0|SOT16_ARATH -              3e-53  182.7   0.0   3.7e-53  182.5   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g098640.t1 -          sp|Q9C9D0|SOT16_ARATH -            1.9e-21   78.2   0.0     2e-21   78.1   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g509990.t1 -          sp|Q9C9D0|SOT16_ARATH -            1.9e-21   78.2   0.0     2e-21   78.1   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g509960.t1 -          sp|Q9C9D0|SOT16_ARATH -            3.7e-15   57.5   0.1   4.1e-15   57.3   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00002283.v1.g431000.t1 -          sp|Q9C9D0|SOT16_ARATH -               0.18   12.5   0.0      0.18   12.5   0.0   1.2   1   0   0   1   1   1   0 -
+#
+# Program:         phmmer
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/SULT/SOT16_ARATH.fasta
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: phmmer -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/SULT//GMO.v1.primary_high_confidence.proteins/SOT16_ARATH.fasta.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/SULT//GMO.v1.primary_high_confidence.proteins/SOT16_ARATH.fasta.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/SULT//GMO.v1.primary_high_confidence.proteins/SOT16_ARATH.fasta.tbl --incE 0.001 /Users/agata/Documents/cannamatrix/Project_02/Analysis/SULT/SOT16_ARATH.fasta /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 16:39:58 2026
+# [ok]

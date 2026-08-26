@@ -1,0 +1,52 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00001690.v1.g223580.t3 -          PALP                 PF00291.32   1.6e-78  268.9   0.4   2.5e-78  268.3   0.4   1.2   1   0   0   1   1   1   1 -
+GMO.00002465.v1.g546840.t2 -          PALP                 PF00291.32   5.1e-78  267.3   0.4     8e-78  266.7   0.4   1.2   1   0   0   1   1   1   1 -
+GMO.00002767.v1.g678500.t1 -          PALP                 PF00291.32   7.1e-75  257.0   0.2     8e-75  256.8   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00000720.v1.g052100.t1 -          PALP                 PF00291.32   7.1e-75  257.0   0.2     8e-75  256.8   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00002216.v1.g357410.t1 -          PALP                 PF00291.32   9.1e-75  256.6   2.4     1e-74  256.4   2.4   1.0   1   0   0   1   1   1   1 -
+GMO.00000720.v1.g052080.t1 -          PALP                 PF00291.32     2e-74  255.5   0.2   2.2e-74  255.4   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00002767.v1.g678520.t1 -          PALP                 PF00291.32     2e-74  255.5   0.2   2.2e-74  255.4   0.2   1.0   1   0   0   1   1   1   1 -
+GMO.00000840.v1.g073890.t1 -          PALP                 PF00291.32   6.4e-74  253.8   0.0   8.1e-74  253.5   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00002319.v1.g460770.t1 -          PALP                 PF00291.32   6.4e-74  253.8   0.0   8.1e-74  253.5   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00002216.v1.g357480.t1 -          PALP                 PF00291.32   2.8e-73  251.7   0.3   3.2e-73  251.6   0.3   1.0   1   0   0   1   1   1   1 -
+GMO.00002216.v1.g357420.t1 -          PALP                 PF00291.32   1.7e-72  249.1   0.3     2e-72  248.9   0.3   1.0   1   0   0   1   1   1   1 -
+GMO.00002319.v1.g473590.t1 -          PALP                 PF00291.32     5e-72  247.6   0.4   5.8e-72  247.4   0.4   1.0   1   0   0   1   1   1   1 -
+GMO.00000872.v1.g079810.t1 -          PALP                 PF00291.32     5e-72  247.6   0.4   5.8e-72  247.4   0.4   1.0   1   0   0   1   1   1   1 -
+GMO.00002216.v1.g357860.t1 -          PALP                 PF00291.32   1.2e-70  243.1   1.1   1.4e-70  242.9   1.1   1.0   1   0   0   1   1   1   1 -
+GMO.00002216.v1.g357430.t1 -          PALP                 PF00291.32   4.6e-70  241.2   0.8   5.2e-70  241.0   0.8   1.0   1   0   0   1   1   1   1 -
+GMO.00002423.v1.g524030.t1 -          PALP                 PF00291.32   1.2e-65  226.7   0.4   1.5e-65  226.4   0.4   1.1   1   0   0   1   1   1   1 -
+GMO.00001712.v1.g229790.t1 -          PALP                 PF00291.32   4.5e-65  224.8   0.4   5.9e-65  224.4   0.4   1.2   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g310720.t1 -          PALP                 PF00291.32   3.2e-64  222.0   0.7   4.6e-64  221.5   0.7   1.2   1   0   0   1   1   1   1 -
+GMO.00001642.v1.g216320.t1 -          PALP                 PF00291.32   8.3e-51  178.0   0.0   1.1e-50  177.6   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00002652.v1.g655400.t1 -          PALP                 PF00291.32   8.4e-51  177.9   0.0   1.1e-50  177.6   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00000872.v1.g080230.t1 -          PALP                 PF00291.32   1.1e-43  154.6   0.3   1.6e-43  154.1   0.3   1.2   1   0   0   1   1   1   1 -
+GMO.00002319.v1.g473200.t1 -          PALP                 PF00291.32   1.1e-43  154.6   0.3   1.6e-43  154.1   0.3   1.2   1   0   0   1   1   1   1 -
+GMO.00000827.v1.g069910.t2 -          PALP                 PF00291.32   1.9e-42  150.6   0.1     3e-42  149.9   0.1   1.3   1   0   0   1   1   1   1 -
+GMO.00002319.v1.g469870.t1 -          PALP                 PF00291.32   2.7e-42  150.0   0.1     4e-42  149.5   0.1   1.2   1   0   0   1   1   1   1 -
+GMO.00000748.v1.g066030.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0   2.9e-35  126.9   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00002452.v1.g534150.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0   2.9e-35  126.9   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00001343.v1.g154890.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0     3e-35  126.9   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00002449.v1.g533950.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0     3e-35  126.9   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00002449.v1.g534010.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0     3e-35  126.9   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00002450.v1.g534050.t1 -          PALP                 PF00291.32   2.3e-35  127.3   0.0     3e-35  126.9   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00001223.v1.g121830.t2 -          PALP                 PF00291.32   2.8e-35  127.0   0.0   3.2e-35  126.8   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002523.v1.g604010.t2 -          PALP                 PF00291.32   4.1e-35  126.5   0.0   4.6e-35  126.3   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002271.v1.g395330.t1 -          PALP                 PF00291.32   1.1e-15   62.7   0.0   1.1e-15   62.6   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002325.v1.g480180.t1 -          PALP                 PF00291.32   1.3e-08   39.5   0.0   1.1e-07   36.4   0.0   1.9   1   1   0   1   1   1   1 -
+GMO.00000571.v1.g026140.t1 -          PALP                 PF00291.32   6.7e-08   37.1   0.0   5.7e-07   34.1   0.0   1.9   1   1   0   1   1   1   1 -
+GMO.00002317.v1.g452370.t1 -          PALP                 PF00291.32      0.41   14.8   0.0      0.53   14.5   0.0   1.2   1   0   0   1   1   1   0 -
+GMO.00002695.v1.g661500.t1 -          PALP                 PF00291.32      0.41   14.8   0.0      0.53   14.5   0.0   1.2   1   0   0   1   1   1   0 -
+GMO.00002250.v1.g367960.t1 -          PALP                 PF00291.32       4.9   11.3   0.0       7.9   10.6   0.0   1.2   1   0   0   1   1   1   0 -
+GMO.00000318.v1.g007800.t1 -          PALP                 PF00291.32         5   11.3   0.0         8   10.6   0.0   1.2   1   0   0   1   1   1   0 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/OASTL/PF00291.hmm
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: hmmsearch -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/OASTL//GMO.v1.primary_high_confidence.proteins/PF00291.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/OASTL//GMO.v1.primary_high_confidence.proteins/PF00291.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/OASTL//GMO.v1.primary_high_confidence.proteins/PF00291.tbl --incE 0.001 -Z 567483 /Users/agata/Documents/cannamatrix/Project_02/Analysis/OASTL/PF00291.hmm /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 15:42:32 2026
+# [ok]

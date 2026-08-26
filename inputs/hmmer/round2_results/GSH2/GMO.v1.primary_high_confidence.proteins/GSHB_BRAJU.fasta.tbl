@@ -1,0 +1,16 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002216.v1.g346800.t2 -          sp|O23732|GSHB_BRAJU -           2.1e-252  839.7   0.0  2.5e-252  839.5   0.0   1.1   1   0   0   1   1   1   1 -
+GMO.00002176.v1.g339470.t2 -          sp|O23732|GSHB_BRAJU -               0.28   11.3   0.0      0.39   10.8   0.0   1.1   1   0   0   1   1   1   0 -
+GMO.00000193.v1.g004350.t2 -          sp|O23732|GSHB_BRAJU -               0.29   11.2   0.0      0.39   10.8   0.0   1.1   1   0   0   1   1   1   0 -
+#
+# Program:         phmmer
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH2/GSHB_BRAJU.fasta
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: phmmer -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH2//GMO.v1.primary_high_confidence.proteins/GSHB_BRAJU.fasta.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH2//GMO.v1.primary_high_confidence.proteins/GSHB_BRAJU.fasta.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH2//GMO.v1.primary_high_confidence.proteins/GSHB_BRAJU.fasta.tbl --incE 0.001 /Users/agata/Documents/cannamatrix/Project_02/Analysis/GSH2/GSHB_BRAJU.fasta /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 16:39:57 2026
+# [ok]

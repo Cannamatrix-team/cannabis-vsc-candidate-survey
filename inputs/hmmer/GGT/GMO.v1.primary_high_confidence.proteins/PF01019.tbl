@@ -1,0 +1,23 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002705.v1.g665510.t1 -          G_glu_transpept      PF01019.27  1.6e-173  583.2   0.0  1.8e-173  582.9   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002711.v1.g667700.t1 -          G_glu_transpept      PF01019.27  1.9e-173  582.9   0.0  2.2e-173  582.7   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00001202.v1.g119250.t1 -          G_glu_transpept      PF01019.27  4.6e-170  571.7   0.0  5.3e-170  571.5   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00002283.v1.g429350.t1 -          G_glu_transpept      PF01019.27  4.6e-170  571.7   0.0  5.3e-170  571.5   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00001200.v1.g119160.t1 -          G_glu_transpept      PF01019.27   9.5e-88  300.1   0.0   1.1e-87  299.9   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00001239.v1.g130700.t1 -          G_glu_transpept      PF01019.27     0.093   16.4   0.0       3.3   11.3   0.0   2.0   2   0   0   2   2   2   0 -
+GMO.00001239.v1.g130690.t1 -          G_glu_transpept      PF01019.27      0.43   14.3   0.3       1.6   12.3   0.1   1.8   2   0   0   2   2   2   0 -
+GMO.00002294.v1.g448730.t1 -          G_glu_transpept      PF01019.27      0.46   14.1   0.3       1.8   12.2   0.1   1.8   2   0   0   2   2   2   0 -
+GMO.00002294.v1.g448720.t1 -          G_glu_transpept      PF01019.27      0.51   14.0   0.0       3.5   11.2   0.0   1.9   2   0   0   2   2   2   0 -
+GMO.00002603.v1.g634030.t1 -          G_glu_transpept      PF01019.27       1.2   12.7   0.1       2.2   11.9   0.1   1.4   1   0   0   1   1   1   0 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Results/GGT/PF01019.hmm
+# Target file:     /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: hmmsearch -o /Users/agata/Documents/cannamatrix/Results/GGT//GMO.v1.primary_high_confidence.proteins/PF01019.log -A /Users/agata/Documents/cannamatrix/Results/GGT//GMO.v1.primary_high_confidence.proteins/PF01019.sto --tblout /Users/agata/Documents/cannamatrix/Results/GGT//GMO.v1.primary_high_confidence.proteins/PF01019.tbl --incE 0.001 -Z 567483 /Users/agata/Documents/cannamatrix/Results/GGT/PF01019.hmm /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Results
+# Date:            Tue Nov 11 13:38:35 2025
+# [ok]

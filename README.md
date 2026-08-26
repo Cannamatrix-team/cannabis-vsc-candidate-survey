@@ -63,6 +63,14 @@ make reporting
 
 Only Python 3 and GNU `sha256sum` are required for this release-level workflow. [Workflow provenance and remaining gaps](workflow/PROVENANCE.md) distinguishes these checks from a full rerun of HMMER, MEME/FIMO, Pfam validation, phylogenetic resolution, and expression-atlas mapping.
 
+The first upstream reconstruction rebuilds all 1,005 search assignments from the archived HMMER tabular outputs. The complete GMO v1 high-confidence protein FASTA remains an external input:
+
+```bash
+make verify-search VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins.fasta
+```
+
+This command regenerates `build/search_assignments_1005.tsv` and requires an exact match with the deposited table. See [the HMMER input notes](inputs/hmmer/README.md) for scope and provenance.
+
 ## Citation and Zenodo metadata
 
 `CITATION.cff` supplies GitHub-readable citation metadata and the versioned Zenodo DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived.

@@ -1,0 +1,21 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00001343.v1.g162120.t1 -          sp|P55217|CGS1_ARATH -           5.6e-271  901.3  16.2  4.7e-270  898.2  16.2   1.9   1   1   0   1   1   1   1 -
+GMO.00001385.v1.g173130.t1 -          sp|P55217|CGS1_ARATH -           5.6e-271  901.3  16.2  4.7e-270  898.2  16.2   1.9   1   1   0   1   1   1   1 -
+GMO.00002271.v1.g399560.t1 -          sp|P55217|CGS1_ARATH -            5.9e-66  224.8   0.1   7.7e-66  224.4   0.1   1.1   1   0   0   1   1   1   1 -
+GMO.00000743.v1.g064290.t1 -          sp|P55217|CGS1_ARATH -            8.1e-66  224.3   0.1   1.1e-65  223.9   0.1   1.1   1   0   0   1   1   1   1 -
+GMO.00001695.v1.g225230.t1 -          sp|P55217|CGS1_ARATH -            1.3e-48  167.5   0.1   1.8e-48  167.1   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00002556.v1.g618800.t1 -          sp|P55217|CGS1_ARATH -            1.3e-48  167.5   0.1   1.8e-48  167.1   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00002516.v1.g581390.t1 -          sp|P55217|CGS1_ARATH -              0.038   14.2   0.1      0.05   13.8   0.1   1.2   1   0   0   1   1   1   0 -
+GMO.00001016.v1.g092600.t1 -          sp|P55217|CGS1_ARATH -               0.04   14.2   0.1      0.05   13.8   0.1   1.2   1   0   0   1   1   1   0 -
+#
+# Program:         phmmer
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/CBS/CGS1_ARATH.fasta
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: phmmer -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/CBS//GMO.v1.primary_high_confidence.proteins/CGS1_ARATH.fasta.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/CBS//GMO.v1.primary_high_confidence.proteins/CGS1_ARATH.fasta.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/CBS//GMO.v1.primary_high_confidence.proteins/CGS1_ARATH.fasta.tbl --incE 0.001 /Users/agata/Documents/cannamatrix/Project_02/Analysis/CBS/CGS1_ARATH.fasta /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 16:39:56 2026
+# [ok]

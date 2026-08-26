@@ -1,0 +1,32 @@
+#                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00002363.v1.g510460.t2 -          Alliinase_C          PF04864.20  3.3e-151  508.2   0.3    4e-151  508.0   0.3   1.1   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g098240.t1 -          Alliinase_C          PF04864.20  7.8e-150  503.7   0.2  9.9e-150  503.4   0.2   1.1   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g098250.t1 -          Alliinase_C          PF04864.20    4e-149  501.4   0.2  4.8e-149  501.1   0.2   1.1   1   0   0   1   1   1   1 -
+GMO.00002363.v1.g510450.t2 -          Alliinase_C          PF04864.20  8.4e-149  500.3   0.2    1e-148  500.0   0.2   1.1   1   0   0   1   1   1   1 -
+GMO.00002325.v1.g481480.t1 -          Alliinase_C          PF04864.20  2.1e-145  489.1   0.1  2.7e-145  488.8   0.1   1.1   1   0   0   1   1   1   1 -
+GMO.00002288.v1.g441120.t1 -          Alliinase_C          PF04864.20  3.5e-145  488.4   0.0  4.1e-145  488.2   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00001376.v1.g170880.t1 -          Alliinase_C          PF04864.20  3.7e-145  488.3   0.0  4.3e-145  488.1   0.0   1.0   1   0   0   1   1   1   1 -
+GMO.00000555.v1.g021720.t1 -          Alliinase_C          PF04864.20    2e-144  485.9   0.2  3.7e-144  485.0   0.2   1.4   1   1   0   1   1   1   1 -
+GMO.00002363.v1.g510470.t1 -          Alliinase_C          PF04864.20  2.9e-144  485.4   0.1  3.4e-144  485.2   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00001056.v1.g098230.t1 -          Alliinase_C          PF04864.20  1.9e-138  466.2   0.1  2.2e-138  466.0   0.1   1.0   1   0   0   1   1   1   1 -
+GMO.00001311.v1.g146950.t1 -          Alliinase_C          PF04864.20   0.00043   24.2   0.0   0.00066   23.6   0.0   1.3   1   0   0   1   1   1   1 -
+GMO.00002499.v1.g569830.t1 -          Alliinase_C          PF04864.20   0.00044   24.2   0.0   0.00068   23.6   0.0   1.2   1   0   0   1   1   1   1 -
+GMO.00001738.v1.g234530.t1 -          Alliinase_C          PF04864.20   0.00064   23.6   0.0    0.0045   20.8   0.0   2.1   1   1   1   2   2   2   1 -
+GMO.00002368.v1.g517730.t1 -          Alliinase_C          PF04864.20   0.00064   23.6   0.0    0.0045   20.8   0.0   2.1   1   1   1   2   2   2   1 -
+GMO.00000332.v1.g008420.t2 -          Alliinase_C          PF04864.20   0.00082   23.3   0.0      0.03   18.1   0.0   2.2   2   0   0   2   2   2   1 -
+GMO.00002251.v1.g368590.t2 -          Alliinase_C          PF04864.20   0.00082   23.3   0.0      0.03   18.1   0.0   2.2   2   0   0   2   2   2   1 -
+GMO.00001573.v1.g197790.t1 -          Alliinase_C          PF04864.20         2   12.1   0.0       2.9   11.6   0.0   1.3   1   0   0   1   1   1   0 -
+GMO.00002601.v1.g629530.t1 -          Alliinase_C          PF04864.20       2.1   12.0   0.1   1.1e+02    6.4   0.0   3.1   4   0   0   4   4   4   0 -
+GMO.00002336.v1.g485500.t1 -          Alliinase_C          PF04864.20       2.2   12.0   0.0       3.2   11.5   0.0   1.2   1   0   0   1   1   1   0 -
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Results/Alliinase/PF04864.hmm
+# Target file:     /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: hmmsearch -o /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04864.log -A /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04864.sto --tblout /Users/agata/Documents/cannamatrix/Results/Alliinase//GMO.v1.primary_high_confidence.proteins/PF04864.tbl --incE 0.001 -Z 567483 /Users/agata/Documents/cannamatrix/Results/Alliinase/PF04864.hmm /Users/agata/Documents/cannamatrix/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Results
+# Date:            Tue Nov 11 13:38:35 2025
+# [ok]

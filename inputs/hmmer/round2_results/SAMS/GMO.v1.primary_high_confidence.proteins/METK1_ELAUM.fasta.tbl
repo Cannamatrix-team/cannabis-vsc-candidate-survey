@@ -1,0 +1,17 @@
+#                                                                      --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name              accession  query name            accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#      ------------------- ----------  -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+GMO.00001197.v1.g118740.t1 -          sp|Q9AT56|METK1_ELAUM -           2.9e-267  887.5   0.9  3.3e-267  887.3   0.9   1.0   1   0   0   1   1   1   1 -
+GMO.00002460.v1.g543920.t1 -          sp|Q9AT56|METK1_ELAUM -           2.9e-267  887.5   0.9  3.3e-267  887.3   0.9   1.0   1   0   0   1   1   1   1 -
+GMO.00002518.v1.g587280.t1 -          sp|Q9AT56|METK1_ELAUM -                0.4   11.1   0.0      0.68   10.4   0.0   1.2   1   0   0   1   1   1   0 -
+GMO.00002651.v1.g654290.t1 -          sp|Q9AT56|METK1_ELAUM -                0.4   11.1   0.0      0.68   10.4   0.0   1.2   1   0   0   1   1   1   0 -
+#
+# Program:         phmmer
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /Users/agata/Documents/cannamatrix/Project_02/Analysis/SAMS/METK1_ELAUM.fasta
+# Target file:     /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta
+# Option settings: phmmer -o /Users/agata/Documents/cannamatrix/Project_02/Analysis/SAMS//GMO.v1.primary_high_confidence.proteins/METK1_ELAUM.fasta.log -A /Users/agata/Documents/cannamatrix/Project_02/Analysis/SAMS//GMO.v1.primary_high_confidence.proteins/METK1_ELAUM.fasta.sto --tblout /Users/agata/Documents/cannamatrix/Project_02/Analysis/SAMS//GMO.v1.primary_high_confidence.proteins/METK1_ELAUM.fasta.tbl --incE 0.001 /Users/agata/Documents/cannamatrix/Project_02/Analysis/SAMS/METK1_ELAUM.fasta /Users/agata/Documents/cannamatrix/Project_01/genome_Cannabis_GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta 
+# Current dir:     /Users/agata/Documents/cannamatrix/Project_02/Analysis
+# Date:            Mon Mar 16 16:39:58 2026
+# [ok]
