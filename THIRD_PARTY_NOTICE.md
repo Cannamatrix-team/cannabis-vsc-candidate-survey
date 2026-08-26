@@ -13,17 +13,17 @@ This repository combines Cannamatrix-created annotations and tables with selecte
 
 ## UniProt reference proteins
 
-The PF01053 phylogeny includes reference protein sequences obtained from UniProt. `queries/query_panel.tsv` identifies the full-length reference queries by UniProt accession and entry name; it does not redistribute the remaining query FASTA files.
+`inputs/search_queries/uniprot/` contains the 13 UniProt protein sequences used as full-length search queries. The PF01053 phylogeny also includes UniProt reference sequences. `queries/query_panel.tsv` records each search query's accession, entry name, and sequence version.
 
 - Resource: [UniProt](https://www.uniprot.org/)
 - License: [CC BY 4.0](https://www.uniprot.org/help/license)
 
 ## Pfam profiles
 
-`queries/query_panel.tsv` records Pfam accessions and model versions used in the searches. The Pfam HMM libraries are not redistributed in this repository.
+`inputs/search_queries/pfam/` contains the 24 exact Pfam models used by the search panel, rather than a complete Pfam library. `queries/query_panel.tsv` records their accessions and model versions.
 
 - Resource: [Pfam through InterPro](https://www.ebi.ac.uk/interpro/entry/pfam/)
-- License information: [InterPro data licensing](https://www.ebi.ac.uk/interpro/about/license/)
+- License: [CC0 1.0](https://www.ebi.ac.uk/interpro/about/license/)
 
 ## Cannabis Expression Atlas
 

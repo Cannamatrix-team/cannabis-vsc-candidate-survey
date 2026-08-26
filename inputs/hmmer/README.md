@@ -10,4 +10,4 @@ make verify-search VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins
 
 `workflow/rebuild_search_assignments.py` applies the paper thresholds of bit score at least 50 and E-value at most 1e-5, records whether each protein passed a Pfam-profile search, a full-length-reference search, or both, and reproduces `data/search_assignments_1005.tsv` exactly.
 
-These files support candidate extraction from completed HMMER searches. They do not themselves rerun `hmmsearch`; packaging the query models and a frozen HMMER execution command is a separate upstream step.
+The exact query models are packaged under `inputs/search_queries/`. To rerun all 42 searches with HMMER 3.4 and verify the resulting assignments, create the environment described in the main README and run `make verify-hmmer` with the same `VSC_PROTEOME` argument.

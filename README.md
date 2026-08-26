@@ -43,7 +43,7 @@ The underlying search and annotation artifacts came from CannamatrixAI commit `c
 
 GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The source annotation dataset is available from Figshare at DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1). The complete 55,790-protein input proteome is not duplicated here; this package includes only the 941 paper-specific sequences.
 
-Pfam profile identifiers and versions are recorded in `queries/query_panel.tsv`, but the Pfam libraries themselves are not redistributed. Full-length reference queries are identified by UniProt accession and entry name. See `THIRD_PARTY_NOTICE.md` for source-specific attribution and licensing.
+The 24 exact Pfam profiles and 13 UniProt reference sequences used by the search panel are preserved under `inputs/search_queries/`. These are only the search-specific assets, not complete copies of either database. See `THIRD_PARTY_NOTICE.md` for source-specific attribution and licensing.
 
 The complete private analysis repository, large GWAS intermediates, and manuscript audit/session artifacts are not part of this evidence package.
 
@@ -61,7 +61,7 @@ This verifies the archived checksums; reconciles the search, stage-ledger, catal
 make reporting
 ```
 
-Only Python 3 and GNU `sha256sum` are required for this release-level workflow. [Workflow provenance and remaining gaps](workflow/PROVENANCE.md) distinguishes these checks from a full rerun of HMMER, MEME/FIMO, Pfam validation, phylogenetic resolution, and expression-atlas mapping.
+Only Python 3 and GNU `sha256sum` are required for this release-level workflow. [Workflow provenance and remaining gaps](workflow/PROVENANCE.md) distinguishes these checks from the upstream analysis stages.
 
 The first upstream reconstruction rebuilds all 1,005 search assignments from the archived HMMER tabular outputs. The complete GMO v1 high-confidence protein FASTA remains an external input:
 
@@ -70,6 +70,16 @@ make verify-search VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins
 ```
 
 This command regenerates `build/search_assignments_1005.tsv` and requires an exact match with the deposited table. See [the HMMER input notes](inputs/hmmer/README.md) for scope and provenance.
+
+The next upstream check reruns all 42 searches from the packaged query assets. Create and activate the HMMER 3.4 environment, then provide the same external proteome:
+
+```bash
+conda env create -f environment.yml
+conda activate cannabis-vsc-survey
+make verify-hmmer VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins.fasta
+```
+
+This verifies every regenerated HMMER hit identifier and score against the archived tables, then confirms that they produce the same 1,005 search assignments. HMMER 3.4 on Linux can round an E-value slightly differently from the archived macOS run or report values below `1e-300` as zero. The comparison permits only those numeric representation differences; candidate membership and all other assignment fields must match.
 
 ## Citation and Zenodo metadata
 
