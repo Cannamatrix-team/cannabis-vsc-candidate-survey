@@ -25,6 +25,7 @@ The files preserve the path from the stated query panel to the paper-specific ca
 7. `domains/family_rules.tsv` freezes the expected Pfam architecture for every reporting category and reuses the 24 exact profiles under `inputs/search_queries/pfam/`.
 8. `gate/` documents the two manuscript-active final gates and the inactive historical annotations excluded from the public runner.
 9. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
+10. `inputs/expression/atlas_gene_metadata_423.tsv` is the minimal Atlas annotation subset needed to regenerate the exact-identity bridge and all six identity-sensitivity rows from the external Atlas protein FASTA.
 
 The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
@@ -123,6 +124,14 @@ make verify-gate
 ```
 
 This requires all 975 gate dispositions, the same 34 removals, and a byte-for-byte match to the deposited 941-protein FASTA. The historical stability and contamination switches were off, and selection context was annotation-only, so they are not part of the manuscript-active runner.
+
+Expression mapping requires the external Cannabis Expression Atlas v1.1 protein FASTA. Extract and checksum the pinned file as described in [the expression input notes](inputs/expression/README.md), then run:
+
+```bash
+make verify-expression ATLAS_PROTEINS=/path/to/CEA_protein_sequences_all.faa
+```
+
+This rebuilds the protein database with BLAST 2.5.0, runs the historical BLASTp command against the 941 retained proteins, selects the highest-bitscore HSP per query, and requires exact agreement with the deposited 168 mappings, 128 Atlas genes, and six identity-sensitivity rows. Numeric comparison permits only equivalent floating-point renderings of BLAST e-values.
 
 ## Citation and Zenodo metadata
 

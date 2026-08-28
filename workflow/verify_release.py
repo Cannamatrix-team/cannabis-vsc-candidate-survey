@@ -43,6 +43,9 @@ def main():
     expression_sensitivity = read_tsv(
         "data/expression/expression_identity_sensitivity.tsv"
     )
+    expression_metadata = read_tsv(
+        "inputs/expression/atlas_gene_metadata_423.tsv"
+    )
     pf01053 = read_tsv("phylogeny/pf01053/assignment_summary.tsv")
 
     search_ids = {row["gene_id"] for row in search}
@@ -251,6 +254,9 @@ def main():
     require(set(sequence_ids), set(catalog_ids), "FASTA and catalog protein sets")
 
     expression_queries = {row["query_acc"] for row in expression}
+    expression_metadata_by_gene = {
+        row["GeneID"]: row for row in expression_metadata
+    }
     tissue_specific = [
         row for row in expression if row["Classification"] == "Tissue-Specific"
     ]
@@ -264,6 +270,39 @@ def main():
         expression_queries <= set(catalog_ids),
         True,
         "expression queries belong to catalog",
+    )
+    require(len(expression_metadata), 423, "minimal Atlas metadata rows")
+    require(
+        len(expression_metadata_by_gene),
+        423,
+        "unique minimal Atlas metadata genes",
+    )
+    require(
+        {row["subject_acc"] for row in expression}
+        <= set(expression_metadata_by_gene),
+        True,
+        "expression bridge genes belong to minimal Atlas metadata",
+    )
+    require(
+        all(
+            row["Classification"]
+            == expression_metadata_by_gene[row["subject_acc"]]["Classification"]
+            and row["Specific tissues"]
+            == expression_metadata_by_gene[row["subject_acc"]]["Specific tissues"]
+            and (
+                row["Tau"]
+                == expression_metadata_by_gene[row["subject_acc"]]["Tau"]
+                or (
+                    row["Tau"]
+                    and expression_metadata_by_gene[row["subject_acc"]]["Tau"]
+                    and float(row["Tau"])
+                    == float(expression_metadata_by_gene[row["subject_acc"]]["Tau"])
+                )
+            )
+            for row in expression
+        ),
+        True,
+        "expression bridge metadata values",
     )
     require(
         all(
@@ -284,16 +323,28 @@ def main():
         168,
         "expression mappings by-bin total",
     )
-    identity_100 = next(
-        row
-        for row in expression_sensitivity
-        if row["minimum_percent_identity"] == "100"
-    )
     require(
-        identity_100["candidate_mappings"], "168", "100%-identity sensitivity mappings"
-    )
-    require(
-        identity_100["unique_atlas_genes"], "128", "100%-identity sensitivity genes"
+        expression_sensitivity,
+        [
+            {
+                "minimum_percent_identity": threshold,
+                "candidate_mappings": mappings,
+                "unique_atlas_genes": genes,
+                "tissue_specific_candidate_mappings": tissue,
+                "root_specific_candidate_mappings": root,
+                "trichome_specific_candidate_mappings": trichome,
+                "candidate_mappings_with_any_trichome_label": any_trichome,
+            }
+            for threshold, mappings, genes, tissue, root, trichome, any_trichome in [
+                ("100", "168", "128", "36", "14", "8", "8"),
+                ("99", "440", "267", "104", "52", "15", "19"),
+                ("98", "584", "319", "133", "66", "20", "24"),
+                ("95", "695", "361", "155", "75", "26", "30"),
+                ("90", "795", "405", "183", "88", "38", "42"),
+                ("80", "860", "423", "193", "96", "38", "44"),
+            ]
+        ],
+        "expression identity-sensitivity series",
     )
 
     require(len(pf01053), 6, "PF01053 resolved candidates")

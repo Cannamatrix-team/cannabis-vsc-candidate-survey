@@ -27,9 +27,12 @@ This repository combines Cannamatrix-created annotations and tables with selecte
 
 ## Cannabis Expression Atlas
 
-The full Cannabis Expression Atlas database is not redistributed. Files under `data/expression/` are derived cross-reference and sensitivity tables produced by matching GMO v1 candidates to the atlas proteins.
+The full Cannabis Expression Atlas protein database is not redistributed. `inputs/expression/atlas_gene_metadata_423.tsv` contains the minimal classification, tissue-label, and Tau subset used by the deposited mappings. Files under `data/expression/` are derived cross-reference and sensitivity tables produced by matching GMO v1 candidates to the atlas proteins. Upstream terms continue to apply to the source-derived fields.
 
 - Source publication: Barbosa-Xavier et al. (2024), *Physiologia Plantarum*, DOI: [10.1111/ppl.70010](https://doi.org/10.1111/ppl.70010)
+- Methods and paper data: [CannAtlas-paper](https://github.com/barbosaxavierkevelin/CannAtlas-paper)
+- Application image: [barbosaxavierkevelin/cannabisexpressionatlas](https://hub.docker.com/r/barbosaxavierkevelin/cannabisexpressionatlas)
+- Expression data archive: [Cannabis Expression Atlas v1](https://doi.org/10.6084/m9.figshare.27115126.v1)
 
 ## MEME Suite
 

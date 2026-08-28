@@ -1,4 +1,4 @@
-.PHONY: check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-gate run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-gate verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
+.PHONY: check-atlas check-blast-tools check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-expression run-gate run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-expression verify-gate verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
 
 DOMAIN_THREADS ?= 4
 MOTIF_THREADS ?= 4
@@ -6,6 +6,14 @@ MOTIF_THREADS ?= 4
 check-proteome:
 	@test -n "$(VSC_PROTEOME)" || { echo "Set VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins.fasta"; exit 2; }
 	@test -f "$(VSC_PROTEOME)" || { echo "Proteome not found: $(VSC_PROTEOME)"; exit 2; }
+
+check-atlas:
+	@test -n "$(ATLAS_PROTEINS)" || { echo "Set ATLAS_PROTEINS=/path/to/CEA_protein_sequences_all.faa"; exit 2; }
+	@test -f "$(ATLAS_PROTEINS)" || { echo "Atlas protein FASTA not found: $(ATLAS_PROTEINS)"; exit 2; }
+
+check-blast-tools:
+	@command -v makeblastdb >/dev/null || { echo "makeblastdb not found; create and activate environment.yml"; exit 2; }
+	@command -v blastp >/dev/null || { echo "blastp not found; create and activate environment.yml"; exit 2; }
 
 check-hmmer-tools:
 	@command -v hmmsearch >/dev/null || { echo "hmmsearch not found; create and activate environment.yml"; exit 2; }
@@ -39,6 +47,10 @@ run-pf01053: check-phylogeny-tools
 
 run-domains: check-domain-tools
 	python3 workflow/run_domain_validation.py --threads "$(DOMAIN_THREADS)"
+
+run-expression: check-atlas check-blast-tools
+	python3 workflow/run_expression_mapping.py \
+		--atlas-proteins "$(ATLAS_PROTEINS)"
 
 run-gate: run-motifs run-domains
 	python3 workflow/run_validation_gate.py
@@ -79,6 +91,9 @@ verify-pf01053: run-pf01053
 
 verify-domains: run-domains
 	python3 workflow/compare_domain_outputs.py
+
+verify-expression: run-expression
+	python3 workflow/compare_expression_outputs.py
 
 verify-gate: run-gate
 	python3 workflow/compare_gate_outputs.py

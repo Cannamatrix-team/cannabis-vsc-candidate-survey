@@ -4,6 +4,7 @@ channels:
   - bioconda
 dependencies:
   - biopython=1.85
+  - blast=2.5.0=hc0b0e79_3
   - hmmer=3.4
   - iqtree=3.1.1
   - mafft=7.520

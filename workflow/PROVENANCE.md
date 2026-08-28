@@ -15,19 +15,19 @@ The historical commit is a provenance reference, not yet a frozen end-to-end wor
 | MEME/FIMO motif screen | `workflow/run_motif_screen.py`; `workflow/compare_motif_outputs.py`; `workflow/compare_motif_models.py`; `motifs/` | MEME Suite 5.5.9 regenerates all 19 evaluable family models exactly, including probability matrices. FIMO and the frozen classification rules reproduce all 975 deposited motif records, including the non-evaluable GSH2 singleton passthrough. |
 | Expected-domain validation | `workflow/run_domain_validation.py`; `workflow/compare_domain_outputs.py`; `domains/`; `inputs/search_queries/pfam/` | HMMER 3.4 and the 24 frozen Pfam profiles reproduce all 973 deposited domain records exactly. The two MGL-nearest proteins remain explicitly marked as having no historical domain record or configured gate rule. |
 | Final validation gate | `workflow/run_validation_gate.py`; `workflow/compare_gate_outputs.py`; `gate/` | The manuscript-active motif and expected-domain rules reproduce all 975 gate dispositions, the exact 34 removals, and a byte-identical 941-protein retained FASTA. Historical inactive stability, selection, and contamination inputs are not required. |
+| Expression-atlas mapping | `workflow/run_expression_mapping.py`; `workflow/compare_expression_outputs.py`; `inputs/expression/` | BLAST 2.5.0 rebuilds the database from the pinned external Atlas v1.1 protein FASTA and reproduces the exact 168 candidate mappings, 128 Atlas genes, and all six identity-sensitivity rows. |
 | Publication reporting counts | `workflow/generate_reporting_tables.py` | Candidate counts are recalculated from the catalog and expression mappings are recalculated from the exact-identity bridge; both outputs match the deposited tables. |
 
-Together, these checks reconstruct the 1,005 initial search assignments from the full GMO v1 proteome and rerun family resolution, motif discovery and scanning, expected-domain validation, and the final 941-protein gate. They do not yet rerun expression mapping.
+Together, these checks reconstruct the 1,005 initial search assignments from the full GMO v1 proteome and rerun family resolution, motif discovery and scanning, expected-domain validation, the final 941-protein gate, and expression-atlas mapping.
 
 The historical MAFFT stage used multithreaded L-INS-i iterative refinement. Repeated runs can differ in alignment columns and reference-only branches because thread scheduling changes the refinement path. The public full rerun fixes MAFFT to one thread and verifies the scientific invariant used downstream: the same nearest reference and family for every candidate. The archived trimmed alignment remains deposited so the IQ-TREE inference itself can be checked independently against the archived topology, model, and likelihood.
 
-## Upstream stages to import and reconcile
+## Remaining manuscript stages to import and reconcile
 
 Paths below are relative to the historical CannamatrixAI commit.
 
 | Stage | Historical source | Required reconciliation before public use |
 |---|---|---|
-| Expression-atlas mapping | `synthase_features/pipeline/2_plots/vsc_expression_overview.py`; `synthase_features/pipeline/results_v2/2h_expression_overview/` | Replace hard-coded paths with inputs, capture the BLAST database build and command, freeze BLAST version/options, and reproduce the 168 mappings to 128 atlas genes. |
 | Manuscript figures and remaining source tables | Maintained in the separate `vsc-manuscript` repository | Port only figures supported by public inputs, declare plotting dependencies, and compare regenerated files with the submitted figures. |
 
 The GWAS, structure-prediction, Foldseek, structural-QC, geometry, and feature-export stages are outside this manuscript's analysis and should not be added to this workflow.
@@ -38,6 +38,10 @@ The historical combined domain output similarly contained 1,078 records: the dep
 
 The historical combined gate returned to 1,080 rows because every motif-stage protein received a gate disposition, including the 105 out-of-scope AAT records. The public gate operates only on the deposited 975-protein FASTA. It retains the singleton motif passthrough, treats a missing post-resolution MGL domain rule as pass-by-default, and requires complete expected-domain architecture everywhere a rule exists.
 
+The historical expression options recorded `perc_identity: 100`, but the Atlas protein-search application did not pass that UI value to `blastp`; it passed E-value 0.001, BLOSUM62, query-HSP coverage 80, and one target sequence. The public runner preserves the actual BLASTp command and applies the 100% identity threshold downstream after selecting the highest-bitscore HSP, matching the deposited method. Its 941-query rerun produces 1,062 HSPs for 900 queries. The historical raw file used the broader 1,080-protein state; after restricting it to the 941 deposited candidates, all 1,062 HSP rows match the fresh Atlas v1.1 result exactly as a multiset.
+
 ## External inputs
 
 The complete GMO v1 proteome is not duplicated in this repository. Its source dataset is identified in the main README, and its expected SHA-256 checksum is recorded in the HMMER input notes. The exact Pfam models and UniProt reference queries needed for this search panel are packaged under `inputs/search_queries/` with their original terms documented in `THIRD_PARTY_NOTICE.md`.
+
+The complete Cannabis Expression Atlas protein FASTA is also external. `inputs/expression/README.md` pins the official Docker v1.1 manifest, internal path, 27,893-record boundary, and SHA-256 checksum. The packaged 423-gene metadata subset contains only the fields required to regenerate the deposited sensitivity table.
