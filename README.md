@@ -81,6 +81,16 @@ make verify-hmmer VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins.
 
 This verifies every regenerated HMMER hit identifier and score against the archived tables, then confirms that they produce the same 1,005 search assignments. HMMER 3.4 on Linux can round an E-value slightly differently from the archived macOS run or report values below `1e-300` as zero. The comparison permits only those numeric representation differences; candidate membership and all other assignment fields must match.
 
+The PF01053 family-resolution workflow is self-contained:
+
+```bash
+make verify-pf01053
+```
+
+This runs a deterministic MAFFT 7.520, trimAl 1.5.0, and IQ-TREE 3.1.1 reconstruction from the packaged 41 references and six candidates. It requires the same CBL, CGS, and MGL nearest-reference assignments as the deposit. It also reruns IQ-TREE from the deposited trimmed alignment with the archived seed and requires the same unrooted topology, selected model, and log-likelihood.
+
+The historical MAFFT command used multithreaded iterative refinement, whose scheduling can change alignment columns and reference-only branches across reruns. The public reconstruction therefore uses one MAFFT thread and treats the six deposited nearest-reference assignments as the full-run invariant. The deposited trimmed alignment provides the separate reproducibility boundary for the archived tree.
+
 ## Citation and Zenodo metadata
 
 `CITATION.cff` supplies GitHub-readable citation metadata and the versioned Zenodo DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived.
