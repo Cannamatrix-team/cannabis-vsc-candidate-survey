@@ -4,7 +4,7 @@ This repository combines Cannamatrix-created annotations and tables with selecte
 
 ## Cannabis GMO v1 protein models
 
-`data/candidate_sequences_941.fasta` is a filtered extract of the GMO v1 primary high-confidence protein models. Candidate identifiers and derived tables also refer to those models.
+`data/candidate_sequences_975.fasta` and `data/candidate_sequences_941.fasta` are filtered extracts of the GMO v1 primary high-confidence protein models. Candidate identifiers and derived tables also refer to those models.
 
 - Source publication: Lynch et al. (2025), *Nature*, DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0)
 - Source annotation data: *Cannabis Pangenome Annotation Data*, DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1)
@@ -30,5 +30,13 @@ This repository combines Cannamatrix-created annotations and tables with selecte
 The full Cannabis Expression Atlas database is not redistributed. Files under `data/expression/` are derived cross-reference and sensitivity tables produced by matching GMO v1 candidates to the atlas proteins.
 
 - Source publication: Barbosa-Xavier et al. (2024), *Physiologia Plantarum*, DOI: [10.1111/ppl.70010](https://doi.org/10.1111/ppl.70010)
+
+## MEME Suite
+
+The compressed XML files under `motifs/meme/` are Cannamatrix analysis outputs generated with MEME Suite 5.5.9; they do not redistribute the MEME software. The reproducibility environment obtains MEME Suite from Bioconda under the software's upstream custom license.
+
+- Software: [MEME Suite](https://meme-suite.org/)
+- Version: 5.5.9
+- License: [MEME Suite copyright and license](https://meme-suite.org/meme/doc/copyright.html)
 
 Users should cite the relevant upstream resource together with this repository when reusing source-derived sequences or annotations.

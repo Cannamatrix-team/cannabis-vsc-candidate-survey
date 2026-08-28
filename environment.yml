@@ -7,5 +7,6 @@ dependencies:
   - hmmer=3.4
   - iqtree=3.1.1
   - mafft=7.520
+  - meme=5.5.9
   - python=3.12
   - trimal=1.5.0

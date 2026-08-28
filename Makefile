@@ -1,4 +1,6 @@
-.PHONY: check-hmmer-tools check-phylogeny-tools check-proteome rebuild-search reporting run-hmmer run-pf01053 verify-hmmer verify-pf01053 verify-release verify-search
+.PHONY: check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-hmmer run-motif-discovery run-motifs run-pf01053 verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
+
+MOTIF_THREADS ?= 4
 
 check-proteome:
 	@test -n "$(VSC_PROTEOME)" || { echo "Set VSC_PROTEOME=/path/to/GMO.v1.primary_high_confidence.proteins.fasta"; exit 2; }
@@ -13,6 +15,12 @@ check-phylogeny-tools:
 	@command -v trimal >/dev/null || { echo "trimal not found; create and activate environment.yml"; exit 2; }
 	@command -v iqtree >/dev/null || { echo "iqtree not found; create and activate environment.yml"; exit 2; }
 
+check-fimo-tools:
+	@command -v fimo >/dev/null || { echo "fimo not found; create and activate environment.yml"; exit 2; }
+
+check-meme-tools: check-fimo-tools
+	@command -v meme >/dev/null || { echo "meme not found; create and activate environment.yml"; exit 2; }
+
 rebuild-search: check-proteome
 	python3 workflow/rebuild_search_assignments.py \
 		--hmmer-root inputs/hmmer \
@@ -23,6 +31,15 @@ run-hmmer: check-proteome check-hmmer-tools
 
 run-pf01053: check-phylogeny-tools
 	python3 workflow/run_pf01053_resolution.py
+
+run-motifs: check-fimo-tools
+	python3 workflow/run_motif_screen.py
+
+run-motif-discovery: check-meme-tools
+	python3 workflow/run_motif_screen.py \
+		--discover \
+		--meme-threads "$(MOTIF_THREADS)" \
+		--output-root build/motif-discovery
 
 reporting:
 	python3 workflow/generate_reporting_tables.py
@@ -48,6 +65,13 @@ verify-pf01053: run-pf01053
 	python3 workflow/compare_pf01053_outputs.py \
 		build/pf01053-archive-tree \
 		--require-archived-topology
+
+verify-motifs: run-motifs
+	python3 workflow/compare_motif_outputs.py
+
+verify-motif-discovery: run-motif-discovery
+	python3 workflow/compare_motif_models.py
+	python3 workflow/compare_motif_outputs.py build/motif-discovery/motif_screen.tsv
 
 verify-release:
 	sha256sum -c SHA256SUMS

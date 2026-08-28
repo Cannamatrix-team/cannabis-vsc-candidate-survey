@@ -20,8 +20,9 @@ The files preserve the path from the stated query panel to the paper-specific ca
 2. `data/search_assignments_1005.tsv` contains the 1,005 initial target-bin assignments, representing 975 unique GMO v1 proteins. A protein may occur in more than one target bin. The support columns distinguish Pfam-only, reference-only, and dual-route hits.
 3. `data/candidate_stage_ledger_975.tsv` provides one row per unique protein after family resolution and carries the motif, expected-domain, gate, and final outcome fields through the validation stages.
 4. `data/candidate_catalog_941.tsv` is the final paper-specific catalog of 941 retained proteins across 20 reporting categories.
-5. `data/candidate_sequences_941.fasta` contains the corresponding full-length amino-acid sequences.
-6. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
+5. `data/candidate_sequences_975.fasta` contains the exact full-length input to the manuscript-scope motif screen; `data/candidate_sequences_941.fasta` contains the final retained subset.
+6. `motifs/` freezes the 19 evaluable family-specific MEME models and all family classification rules. The remaining GSH2 family is the explicitly flagged singleton.
+7. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
 
 The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
@@ -41,7 +42,7 @@ The source atlas is described by Barbosa-Xavier et al. (2024), DOI: [10.1111/ppl
 
 The underlying search and annotation artifacts came from CannamatrixAI commit `ca6a37a5240e8e0c85b29912d9136fc087cd7d1d` on branch `KB-VSC_pipeline_validation`.
 
-GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The source annotation dataset is available from Figshare at DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1). The complete 55,790-protein input proteome is not duplicated here; this package includes only the 941 paper-specific sequences.
+GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The source annotation dataset is available from Figshare at DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1). The complete 55,790-protein input proteome is not duplicated here; this package includes the 975 motif-stage sequences and the 941 final retained sequences.
 
 The 24 exact Pfam profiles and 13 UniProt reference sequences used by the search panel are preserved under `inputs/search_queries/`. These are only the search-specific assets, not complete copies of either database. See `THIRD_PARTY_NOTICE.md` for source-specific attribution and licensing.
 
@@ -90,6 +91,20 @@ make verify-pf01053
 This runs a deterministic MAFFT 7.520, trimAl 1.5.0, and IQ-TREE 3.1.1 reconstruction from the packaged 41 references and six candidates. It requires the same CBL, CGS, and MGL nearest-reference assignments as the deposit. It also reruns IQ-TREE from the deposited trimmed alignment with the archived seed and requires the same unrooted topology, selected model, and log-likelihood.
 
 The historical MAFFT command used multithreaded iterative refinement, whose scheduling can change alignment columns and reference-only branches across reruns. The public reconstruction therefore uses one MAFFT thread and treats the six deposited nearest-reference assignments as the full-run invariant. The deposited trimmed alignment provides the separate reproducibility boundary for the archived tree.
+
+The motif-stage workflow is self-contained and pins MEME Suite 5.5.9. The fast verification rescans the exact archived de novo models with FIMO and requires all 975 deposited motif records:
+
+```bash
+make verify-motifs
+```
+
+The exhaustive verification also reruns de novo MEME discovery for all 19 evaluable families, requires every motif identity, E-value, and probability matrix to match the archived models, then requires the same 975 records after FIMO classification:
+
+```bash
+make verify-motif-discovery
+```
+
+This full audit took about 46 minutes with four MEME threads during package validation. MEME can emit harmless warnings when optional EPS logos cannot be converted to PNG; motif XML, FIMO output, and classification are unaffected.
 
 ## Citation and Zenodo metadata
 

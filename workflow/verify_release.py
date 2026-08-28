@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 
 import csv
+import gzip
+import hashlib
 from collections import Counter
 from pathlib import Path
-
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,6 +34,7 @@ def main():
     ledger = read_tsv("data/candidate_stage_ledger_975.tsv")
     catalog = read_tsv("data/candidate_catalog_941.tsv")
     category_counts = read_tsv("data/candidate_counts_by_category.tsv")
+    motif_models = read_tsv("motifs/model_manifest.tsv")
     expression = read_tsv("data/expression/expression_bridge_exact100_qcov80.tsv")
     expression_by_bin = read_tsv(
         "data/expression/expression_exact100_candidate_mappings_by_bin.tsv"
@@ -50,6 +52,37 @@ def main():
     require(len(ledger_ids), 975, "unique stage-ledger proteins")
     require(ledger_ids, search_ids, "search and stage-ledger protein sets")
 
+    stage_sequence_ids = fasta_ids("data/candidate_sequences_975.fasta")
+    require(len(stage_sequence_ids), 975, "motif-stage FASTA records")
+    require(len(set(stage_sequence_ids)), 975, "unique motif-stage FASTA identifiers")
+    require(
+        set(stage_sequence_ids),
+        ledger_ids,
+        "motif-stage FASTA and stage-ledger protein sets",
+    )
+
+    require(len(motif_models), 20, "motif model manifest families")
+    require(
+        Counter(row["meme_evaluable"] for row in motif_models),
+        Counter({"true": 19, "false": 1}),
+        "motif model evaluability",
+    )
+    require(
+        sum(int(row["n_sequences"]) for row in motif_models),
+        975,
+        "motif model sequence total",
+    )
+    for row in motif_models:
+        if not row["model_file"]:
+            require(row["family"], "gsh2", "motif-model singleton family")
+            continue
+        model = gzip.decompress((ROOT / row["model_file"]).read_bytes())
+        require(
+            hashlib.sha256(model).hexdigest(),
+            row["model_xml_sha256"],
+            f"{row['family']} motif model checksum",
+        )
+
     expected_outcomes = Counter(
         {
             "retained": 939,
@@ -65,8 +98,12 @@ def main():
     catalog_ids = [row["gene_id"] for row in catalog]
     require(len(catalog), 941, "catalog rows")
     require(len(set(catalog_ids)), 941, "unique catalog proteins")
-    require(set(catalog_ids), retained_ids, "catalog and retained stage-ledger protein sets")
-    require({row["final_pass"] for row in catalog}, {"True"}, "catalog final-pass values")
+    require(
+        set(catalog_ids), retained_ids, "catalog and retained stage-ledger protein sets"
+    )
+    require(
+        {row["final_pass"] for row in catalog}, {"True"}, "catalog final-pass values"
+    )
 
     expected_categories = Counter(
         {
@@ -94,11 +131,14 @@ def main():
         128,
         "distinct mapped atlas genes",
     )
-    require(expression_queries <= set(catalog_ids), True, "expression queries belong to catalog")
+    require(
+        expression_queries <= set(catalog_ids),
+        True,
+        "expression queries belong to catalog",
+    )
     require(
         all(
-            float(row["p_identity"]) == 100.0
-            and float(row["query_coverage"]) >= 0.8
+            float(row["p_identity"]) == 100.0 and float(row["query_coverage"]) >= 0.8
             for row in expression
         ),
         True,
@@ -120,8 +160,12 @@ def main():
         for row in expression_sensitivity
         if row["minimum_percent_identity"] == "100"
     )
-    require(identity_100["candidate_mappings"], "168", "100%-identity sensitivity mappings")
-    require(identity_100["unique_atlas_genes"], "128", "100%-identity sensitivity genes")
+    require(
+        identity_100["candidate_mappings"], "168", "100%-identity sensitivity mappings"
+    )
+    require(
+        identity_100["unique_atlas_genes"], "128", "100%-identity sensitivity genes"
+    )
 
     require(len(pf01053), 6, "PF01053 resolved candidates")
     require(
@@ -130,7 +174,7 @@ def main():
         "PF01053 family assignments",
     )
 
-    print("Verified the deposited 941-candidate release.")
+    print("Verified the deposited 975-protein stage ledger and 941-candidate release.")
 
 
 if __name__ == "__main__":
