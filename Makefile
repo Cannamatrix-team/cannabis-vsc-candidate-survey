@@ -1,5 +1,6 @@
-.PHONY: check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-hmmer run-motif-discovery run-motifs run-pf01053 verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
+.PHONY: check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
 
+DOMAIN_THREADS ?= 4
 MOTIF_THREADS ?= 4
 
 check-proteome:
@@ -9,6 +10,10 @@ check-proteome:
 check-hmmer-tools:
 	@command -v hmmsearch >/dev/null || { echo "hmmsearch not found; create and activate environment.yml"; exit 2; }
 	@command -v phmmer >/dev/null || { echo "phmmer not found; create and activate environment.yml"; exit 2; }
+
+check-domain-tools:
+	@command -v hmmscan >/dev/null || { echo "hmmscan not found; create and activate environment.yml"; exit 2; }
+	@command -v hmmpress >/dev/null || { echo "hmmpress not found; create and activate environment.yml"; exit 2; }
 
 check-phylogeny-tools:
 	@command -v mafft >/dev/null || { echo "mafft not found; create and activate environment.yml"; exit 2; }
@@ -31,6 +36,9 @@ run-hmmer: check-proteome check-hmmer-tools
 
 run-pf01053: check-phylogeny-tools
 	python3 workflow/run_pf01053_resolution.py
+
+run-domains: check-domain-tools
+	python3 workflow/run_domain_validation.py --threads "$(DOMAIN_THREADS)"
 
 run-motifs: check-fimo-tools
 	python3 workflow/run_motif_screen.py
@@ -65,6 +73,9 @@ verify-pf01053: run-pf01053
 	python3 workflow/compare_pf01053_outputs.py \
 		build/pf01053-archive-tree \
 		--require-archived-topology
+
+verify-domains: run-domains
+	python3 workflow/compare_domain_outputs.py
 
 verify-motifs: run-motifs
 	python3 workflow/compare_motif_outputs.py

@@ -22,7 +22,8 @@ The files preserve the path from the stated query panel to the paper-specific ca
 4. `data/candidate_catalog_941.tsv` is the final paper-specific catalog of 941 retained proteins across 20 reporting categories.
 5. `data/candidate_sequences_975.fasta` contains the exact full-length input to the manuscript-scope motif screen; `data/candidate_sequences_941.fasta` contains the final retained subset.
 6. `motifs/` freezes the 19 evaluable family-specific MEME models and all family classification rules. The remaining GSH2 family is the explicitly flagged singleton.
-7. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
+7. `domains/family_rules.tsv` freezes the expected Pfam architecture for every reporting category and reuses the 24 exact profiles under `inputs/search_queries/pfam/`.
+8. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
 
 The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
@@ -105,6 +106,14 @@ make verify-motif-discovery
 ```
 
 This full audit took about 46 minutes with four MEME threads during package validation. MEME can emit harmless warnings when optional EPS logos cannot be converted to PNG; motif XML, FIMO output, and classification are unaffected.
+
+Expected-domain validation reruns HMMER 3.4 against the same 24 packaged Pfam profiles and requires exact agreement for all 973 deposited records:
+
+```bash
+make verify-domains
+```
+
+The other two proteins are the explicitly recorded MGL no-rule cases. The check requires the deposited outcome distribution of 939 complete, 32 partial, and 2 absent domain architectures.
 
 ## Citation and Zenodo metadata
 

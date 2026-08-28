@@ -1,11 +1,13 @@
 # HMMER search queries
 
-This directory contains only the query assets used by the 42 searches in `queries/query_panel.tsv`:
+This directory contains the query assets used by the 42 searches in `queries/query_panel.tsv`:
 
 - `pfam/`: 24 Pfam profile HMMs. Each filename includes the exact model accession and version.
 - `uniprot/`: 13 full-length UniProt reference proteins. Each filename is the UniProt accession; the panel records the entry name and sequence version.
 
 These are the exact files preserved in CannamatrixAI commit `ca6a37a5240e8e0c85b29912d9136fc087cd7d1d`, the historical source for the deposited analysis. They are packaged here so the searches can be rerun without relying on the current contents of changing upstream databases.
+
+The 24 Pfam profiles are also the complete model set used by the expected-domain validation stage. That rerun combines only the profiles configured for each reporting category in `domains/family_rules.tsv`.
 
 The full GMO v1 high-confidence proteome remains an external input. See `inputs/hmmer/README.md` for its source and checksum.
 

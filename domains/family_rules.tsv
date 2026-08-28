@@ -1,0 +1,21 @@
+family	pfam_ids	required_pfam_ids	confirmation_rule	record_expected
+adh	PF00107,PF08240	PF00107,PF08240	all_required	true
+alliinase	PF04863,PF04864	PF04863,PF04864	all_required	true
+aoc	PF06351	PF06351	any_required	true
+aos_hpl	PF00067	PF00067	any_required	true
+cbl	PF01053	PF01053	any_required	true
+cgs	PF01053	PF01053	any_required	true
+fmo	PF00743	PF00743	any_required	true
+ggt	PF01019	PF01019	any_required	true
+gsh1	PF04107	PF04107	any_required	true
+gsh2	PF03199,PF03917	PF03199,PF03917	all_required	true
+gst	PF02798	PF02798	any_required	true
+lf_synthase	PF10604	PF10604	any_required	true
+lox	PF00305,PF01477	PF00305,PF01477	all_required	true
+mgl				false
+myrosinase	PF00232	PF00232	any_required	true
+oastl	PF00291	PF00291	any_required	true
+rhodanese	PF00581	PF00581	any_required	true
+sams	PF00438,PF02772,PF02773	PF00438,PF02772,PF02773	all_required	true
+sult	PF00685	PF00685	any_required	true
+ugt	PF00201	PF00201	any_required	true

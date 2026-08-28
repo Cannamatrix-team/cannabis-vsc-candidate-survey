@@ -35,6 +35,7 @@ def main():
     catalog = read_tsv("data/candidate_catalog_941.tsv")
     category_counts = read_tsv("data/candidate_counts_by_category.tsv")
     motif_models = read_tsv("motifs/model_manifest.tsv")
+    domain_rules = read_tsv("domains/family_rules.tsv")
     expression = read_tsv("data/expression/expression_bridge_exact100_qcov80.tsv")
     expression_by_bin = read_tsv(
         "data/expression/expression_exact100_candidate_mappings_by_bin.tsv"
@@ -81,6 +82,84 @@ def main():
             hashlib.sha256(model).hexdigest(),
             row["model_xml_sha256"],
             f"{row['family']} motif model checksum",
+        )
+
+    ledger_families = {row["reporting_category"] for row in ledger}
+    require(len(domain_rules), 20, "expected-domain rule families")
+    require(
+        {row["family"] for row in domain_rules},
+        ledger_families,
+        "expected-domain rule and ledger families",
+    )
+    require(
+        Counter(row["record_expected"] for row in domain_rules),
+        Counter({"true": 19, "false": 1}),
+        "expected-domain record rules",
+    )
+    no_record_rules = [row for row in domain_rules if row["record_expected"] == "false"]
+    require(len(no_record_rules), 1, "expected-domain no-record rule count")
+    require(no_record_rules[0]["family"], "mgl", "expected-domain no-record family")
+
+    configured_profiles = {
+        pfam_id
+        for row in domain_rules
+        for pfam_id in row["pfam_ids"].split(",")
+        if pfam_id
+    }
+    packaged_profiles = {
+        path.name.split(".", 1)[0]
+        for path in (ROOT / "inputs/search_queries/pfam").glob("*.hmm")
+    }
+    require(len(configured_profiles), 24, "configured expected-domain profiles")
+    require(
+        configured_profiles,
+        packaged_profiles,
+        "configured and packaged expected-domain profiles",
+    )
+
+    require(
+        Counter(row["expected_domain_record_present"] for row in ledger),
+        Counter({"true": 973, "false": 2}),
+        "expected-domain record presence",
+    )
+    no_domain_records = [
+        row for row in ledger if row["expected_domain_record_present"] == "false"
+    ]
+    require(
+        {row["reporting_category"] for row in no_domain_records},
+        {"mgl"},
+        "expected-domain no-record ledger family",
+    )
+    require(
+        all(
+            not row["pfam_confirmation_rule"] and not row["pfam_required_ids"]
+            for row in no_domain_records
+        ),
+        True,
+        "expected-domain no-record fields",
+    )
+    domain_statuses = Counter(
+        row["domain_confirmation_status"]
+        for row in ledger
+        if row["expected_domain_record_present"] == "true"
+    )
+    require(
+        domain_statuses,
+        Counter({"complete": 939, "partial": 32, "absent": 2}),
+        "expected-domain confirmation statuses",
+    )
+    rules_by_family = {row["family"]: row for row in domain_rules}
+    for family in sorted(ledger_families - {"mgl"}):
+        family_rows = [row for row in ledger if row["reporting_category"] == family]
+        observed = {
+            (row["pfam_required_ids"], row["pfam_confirmation_rule"])
+            for row in family_rows
+        }
+        rule = rules_by_family[family]
+        require(
+            observed,
+            {(rule["required_pfam_ids"], rule["confirmation_rule"])},
+            f"{family} expected-domain rule",
         )
 
     expected_outcomes = Counter(
