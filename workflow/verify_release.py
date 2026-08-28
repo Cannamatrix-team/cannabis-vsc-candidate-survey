@@ -162,6 +162,56 @@ def main():
             f"{family} expected-domain rule",
         )
 
+    def bool_text(value):
+        return "True" if value else "False"
+
+    biological_pass = {
+        row["gene_id"]: row["meme_status"] in {"confirmed", "partial"} for row in ledger
+    }
+    operational_pass = {
+        row["gene_id"]: biological_pass[row["gene_id"]]
+        or row["singleton_passthrough"] == "True"
+        for row in ledger
+    }
+    expected_pfam_pass = {
+        row["gene_id"]: row["expected_domain_record_present"] == "false"
+        or row["domain_confirmation_status"] == "complete"
+        for row in ledger
+    }
+    expected_final_pass = {
+        row["gene_id"]: operational_pass[row["gene_id"]]
+        and expected_pfam_pass[row["gene_id"]]
+        for row in ledger
+    }
+    require(
+        all(
+            row["meme_biological_pass"] == bool_text(biological_pass[row["gene_id"]])
+            and row["meme_operational_pass"]
+            == bool_text(operational_pass[row["gene_id"]])
+            and row["meme_pass"] == bool_text(biological_pass[row["gene_id"]])
+            for row in ledger
+        ),
+        True,
+        "motif gate semantics",
+    )
+    require(
+        all(
+            row["pfam_pass"] == bool_text(expected_pfam_pass[row["gene_id"]])
+            and row["pfam_gate_active"] == "True"
+            for row in ledger
+        ),
+        True,
+        "expected-domain gate semantics",
+    )
+    require(
+        all(
+            row["final_pass"] == bool_text(expected_final_pass[row["gene_id"]])
+            for row in ledger
+        ),
+        True,
+        "final validation-gate semantics",
+    )
+
     expected_outcomes = Counter(
         {
             "retained": 939,

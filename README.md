@@ -23,7 +23,8 @@ The files preserve the path from the stated query panel to the paper-specific ca
 5. `data/candidate_sequences_975.fasta` contains the exact full-length input to the manuscript-scope motif screen; `data/candidate_sequences_941.fasta` contains the final retained subset.
 6. `motifs/` freezes the 19 evaluable family-specific MEME models and all family classification rules. The remaining GSH2 family is the explicitly flagged singleton.
 7. `domains/family_rules.tsv` freezes the expected Pfam architecture for every reporting category and reuses the 24 exact profiles under `inputs/search_queries/pfam/`.
-8. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
+8. `gate/` documents the two manuscript-active final gates and the inactive historical annotations excluded from the public runner.
+9. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
 
 The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
@@ -114,6 +115,14 @@ make verify-domains
 ```
 
 The other two proteins are the explicitly recorded MGL no-rule cases. The check requires the deposited outcome distribution of 939 complete, 32 partial, and 2 absent domain architectures.
+
+The final gate can then be rerun from the reconstructed motif and domain outputs:
+
+```bash
+make verify-gate
+```
+
+This requires all 975 gate dispositions, the same 34 removals, and a byte-for-byte match to the deposited 941-protein FASTA. The historical stability and contamination switches were off, and selection context was annotation-only, so they are not part of the manuscript-active runner.
 
 ## Citation and Zenodo metadata
 

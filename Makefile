@@ -1,4 +1,4 @@
-.PHONY: check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
+.PHONY: check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-gate run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-gate verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
 
 DOMAIN_THREADS ?= 4
 MOTIF_THREADS ?= 4
@@ -40,6 +40,9 @@ run-pf01053: check-phylogeny-tools
 run-domains: check-domain-tools
 	python3 workflow/run_domain_validation.py --threads "$(DOMAIN_THREADS)"
 
+run-gate: run-motifs run-domains
+	python3 workflow/run_validation_gate.py
+
 run-motifs: check-fimo-tools
 	python3 workflow/run_motif_screen.py
 
@@ -76,6 +79,9 @@ verify-pf01053: run-pf01053
 
 verify-domains: run-domains
 	python3 workflow/compare_domain_outputs.py
+
+verify-gate: run-gate
+	python3 workflow/compare_gate_outputs.py
 
 verify-motifs: run-motifs
 	python3 workflow/compare_motif_outputs.py
