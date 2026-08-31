@@ -26,6 +26,7 @@ The files preserve the path from the stated query panel to the paper-specific ca
 8. `gate/` documents the two manuscript-active final gates and the inactive historical annotations excluded from the public runner.
 9. `data/candidate_counts_by_category.tsv` gives category counts and the manuscript hypothesis-group crosswalk.
 10. `inputs/expression/atlas_gene_metadata_423.tsv` is the minimal Atlas annotation subset needed to regenerate the exact-identity bridge and all six identity-sensitivity rows from the external Atlas protein FASTA.
+11. `manuscript/` freezes the four submitted figure checksums and four manuscript-only source tables, plus a public-input-only generator for reproducing them.
 
 The stage ledger records 34 removals for incomplete expected-domain architecture: 22 ADH, 5 alliinase, 2 FMO, and 5 LOX candidates. Two MGL-nearest proteins had no configured expected-domain rule and were retained by the gate default; this is explicitly marked in `final_outcome`.
 
@@ -132,6 +133,16 @@ make verify-expression ATLAS_PROTEINS=/path/to/CEA_protein_sequences_all.faa
 ```
 
 This rebuilds the protein database with BLAST 2.5.0, runs the historical BLASTp command against the 941 retained proteins, selects the highest-bitscore HSP per query, and requires exact agreement with the deposited 168 mappings, 128 Atlas genes, and six identity-sensitivity rows. Numeric comparison permits only equivalent floating-point renderings of BLAST e-values.
+
+The four manuscript figures and four remaining presentation tables can be regenerated without either external proteome:
+
+```bash
+conda env create -f manuscript/environment.yml
+conda activate cannabis-vsc-manuscript
+make verify-manuscript
+```
+
+This requires byte-identical agreement with the frozen reconciled-manuscript PNG/PDF figures and TSV tables. See [the manuscript artifact notes](manuscript/README.md) for the input mapping and plotting-environment boundary.
 
 ## Citation and Zenodo metadata
 

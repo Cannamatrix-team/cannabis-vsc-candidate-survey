@@ -1,0 +1,10 @@
+name: cannabis-vsc-manuscript
+channels:
+  - conda-forge
+dependencies:
+  - pip
+  - python=3.13.12
+  - pip:
+      - biopython==1.87
+      - matplotlib==3.10.8
+      - numpy==2.4.2

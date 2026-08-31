@@ -1,4 +1,4 @@
-.PHONY: check-atlas check-blast-tools check-domain-tools check-fimo-tools check-hmmer-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-expression run-gate run-hmmer run-motif-discovery run-motifs run-pf01053 verify-domains verify-expression verify-gate verify-hmmer verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
+.PHONY: check-atlas check-blast-tools check-domain-tools check-fimo-tools check-hmmer-tools check-manuscript-tools check-meme-tools check-phylogeny-tools check-proteome rebuild-search reporting run-domains run-expression run-gate run-hmmer run-manuscript run-motif-discovery run-motifs run-pf01053 verify-domains verify-expression verify-gate verify-hmmer verify-manuscript verify-motif-discovery verify-motifs verify-pf01053 verify-release verify-search
 
 DOMAIN_THREADS ?= 4
 MOTIF_THREADS ?= 4
@@ -34,6 +34,9 @@ check-fimo-tools:
 check-meme-tools: check-fimo-tools
 	@command -v meme >/dev/null || { echo "meme not found; create and activate environment.yml"; exit 2; }
 
+check-manuscript-tools:
+	@python3 -c "import Bio, matplotlib, numpy" || { echo "Create and activate manuscript/environment.yml"; exit 2; }
+
 rebuild-search: check-proteome
 	python3 workflow/rebuild_search_assignments.py \
 		--hmmer-root inputs/hmmer \
@@ -51,6 +54,9 @@ run-domains: check-domain-tools
 run-expression: check-atlas check-blast-tools
 	python3 workflow/run_expression_mapping.py \
 		--atlas-proteins "$(ATLAS_PROTEINS)"
+
+run-manuscript: check-manuscript-tools
+	python3 manuscript/generate_paper_figures.py
 
 run-gate: run-motifs run-domains
 	python3 workflow/run_validation_gate.py
@@ -94,6 +100,9 @@ verify-domains: run-domains
 
 verify-expression: run-expression
 	python3 workflow/compare_expression_outputs.py
+
+verify-manuscript: run-manuscript
+	python3 workflow/compare_manuscript_artifacts.py
 
 verify-gate: run-gate
 	python3 workflow/compare_gate_outputs.py

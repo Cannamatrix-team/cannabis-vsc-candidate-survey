@@ -1,0 +1,7 @@
+rule_scope	configured_categories	confirmed_minimum_distinct_motifs	confirmed_minimum_detected_motif_fraction	partial_minimum_distinct_motifs	partial_minimum_detected_motif_fraction	disposition
+Default	All evaluable categories except ADH, GST, UGT, and Alliinase	2	0.20	1	0.10	Confirmed and partial pass
+ADH override	adh	3	0.25	1	0.10	Confirmed and partial pass
+GST override	gst	3	0.25	1	0.10	Confirmed and partial pass
+UGT override	ugt	3	0.25	1	0.10	Confirmed and partial pass
+Alliinase/ACC-synthase-like override	alliinase	2	0.25	1	0.12	Confirmed and partial pass
+Singleton	gsh2	NA	NA	NA	NA	One sequence; motif discovery unevaluable, proceeded directly to the domain gate

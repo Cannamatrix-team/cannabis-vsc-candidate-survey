@@ -17,18 +17,11 @@ The historical commit is a provenance reference, not yet a frozen end-to-end wor
 | Final validation gate | `workflow/run_validation_gate.py`; `workflow/compare_gate_outputs.py`; `gate/` | The manuscript-active motif and expected-domain rules reproduce all 975 gate dispositions, the exact 34 removals, and a byte-identical 941-protein retained FASTA. Historical inactive stability, selection, and contamination inputs are not required. |
 | Expression-atlas mapping | `workflow/run_expression_mapping.py`; `workflow/compare_expression_outputs.py`; `inputs/expression/` | BLAST 2.5.0 rebuilds the database from the pinned external Atlas v1.1 protein FASTA and reproduces the exact 168 candidate mappings, 128 Atlas genes, and all six identity-sensitivity rows. |
 | Publication reporting counts | `workflow/generate_reporting_tables.py` | Candidate counts are recalculated from the catalog and expression mappings are recalculated from the exact-identity bridge; both outputs match the deposited tables. |
+| Manuscript figures and source tables | `manuscript/generate_paper_figures.py`; `workflow/compare_manuscript_artifacts.py`; `manuscript/` | Public package inputs regenerate four PNG/PDF figures and four manuscript-only TSV tables byte-for-byte against the reconciled `vsc-manuscript` commit `c45f33f`. |
 
-Together, these checks reconstruct the 1,005 initial search assignments from the full GMO v1 proteome and rerun family resolution, motif discovery and scanning, expected-domain validation, the final 941-protein gate, and expression-atlas mapping.
+Together, these checks reconstruct the 1,005 initial search assignments from the full GMO v1 proteome and rerun family resolution, motif discovery and scanning, expected-domain validation, the final 941-protein gate, expression-atlas mapping, and the submitted manuscript presentation layer.
 
 The historical MAFFT stage used multithreaded L-INS-i iterative refinement. Repeated runs can differ in alignment columns and reference-only branches because thread scheduling changes the refinement path. The public full rerun fixes MAFFT to one thread and verifies the scientific invariant used downstream: the same nearest reference and family for every candidate. The archived trimmed alignment remains deposited so the IQ-TREE inference itself can be checked independently against the archived topology, model, and likelihood.
-
-## Remaining manuscript stages to import and reconcile
-
-Paths below are relative to the historical CannamatrixAI commit.
-
-| Stage | Historical source | Required reconciliation before public use |
-|---|---|---|
-| Manuscript figures and remaining source tables | Maintained in the separate `vsc-manuscript` repository | Port only figures supported by public inputs, declare plotting dependencies, and compare regenerated files with the submitted figures. |
 
 The GWAS, structure-prediction, Foldseek, structural-QC, geometry, and feature-export stages are outside this manuscript's analysis and should not be added to this workflow.
 

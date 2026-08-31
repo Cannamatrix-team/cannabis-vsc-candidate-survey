@@ -1,0 +1,24 @@
+table1_pre_search_target	shared_candidate_pool	reporting_category	disposition
+SAMS		S-adenosylmethionine synthase	one-to-one
+CBL	PF01053	PF01053 nearest-reference CBL	shared-pool phylogenetic assignment
+CGS	PF01053	PF01053 nearest-reference CGS	shared-pool phylogenetic assignment
+GSH1		Glutamate-cysteine ligase	one-to-one
+GSH2		Glutathione synthetase	one-to-one
+OASTL		PF00291 PALP domain	one-to-one
+GST		GST_N domain	one-to-one
+GGT		GGT domain	one-to-one
+UGT		UDPGT domain	one-to-one
+SULT		SULT domain	one-to-one
+FMO		FMO-like domain	one-to-one
+Rhodanese		Rhodanese domain	one-to-one
+CSCBL-like	PF01053		shared-pool reference group; no nearest assignments
+MGL-Artocarpus	PF01053	PF01053 nearest-reference MGL	three MGL targets collapse to one reporting category
+MGL-Cannabis	PF01053	PF01053 nearest-reference MGL	three MGL targets collapse to one reporting category
+MGL-Durio	PF01053	PF01053 nearest-reference MGL	three MGL targets collapse to one reporting category
+Alliinase		Alliinase/ACC-synthase-like	one-to-one
+Lachrymatory-factor synthase		Polyketide_cyc2 domain	one-to-one
+Myrosinase		GH1 beta-glucosidase	one-to-one
+LOX		LOX architecture	one-to-one
+AOS/HPL-motivated P450 search		P450 domain	one-to-one
+AOC		AOC domain	one-to-one
+ADH		ADH architecture	one-to-one

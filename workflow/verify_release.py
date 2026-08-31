@@ -46,6 +46,19 @@ def main():
     expression_metadata = read_tsv(
         "inputs/expression/atlas_gene_metadata_423.tsv"
     )
+    manuscript_figures = read_tsv("manuscript/figure_checksums.tsv")
+    manuscript_counts = read_tsv(
+        "manuscript/tables/reporting_category_counts.tsv"
+    )
+    manuscript_crosswalk = read_tsv(
+        "manuscript/tables/target_to_reporting_category_crosswalk.tsv"
+    )
+    manuscript_motif_rules = read_tsv(
+        "manuscript/tables/supplementary_table_s1_motif_screen_rules.tsv"
+    )
+    manuscript_expression_parameters = read_tsv(
+        "manuscript/tables/expression_mapping_parameters.tsv"
+    )
     pf01053 = read_tsv("phylogeny/pf01053/assignment_summary.tsv")
 
     search_ids = {row["gene_id"] for row in search}
@@ -345,6 +358,51 @@ def main():
             ]
         ],
         "expression identity-sensitivity series",
+    )
+
+    require(len(manuscript_figures), 8, "frozen manuscript figure artifacts")
+    require(
+        len({row["artifact"] for row in manuscript_figures}),
+        8,
+        "unique frozen manuscript figure artifacts",
+    )
+    require(
+        {Path(row["artifact"]).suffix for row in manuscript_figures},
+        {".png", ".pdf"},
+        "frozen manuscript figure formats",
+    )
+    manuscript_count_map = {
+        row["pipeline_slug"]: int(row["candidate_count"])
+        for row in manuscript_counts
+    }
+    require(len(manuscript_counts), 21, "manuscript reporting-table rows")
+    require(
+        manuscript_count_map.pop("cscbl_like"),
+        0,
+        "unoccupied CSCBL-like manuscript row",
+    )
+    require(
+        manuscript_count_map,
+        expected_categories,
+        "manuscript and release category counts",
+    )
+    require(len(manuscript_crosswalk), 23, "manuscript pre-search target rows")
+    require(
+        len(
+            {
+                row["reporting_category"]
+                for row in manuscript_crosswalk
+                if row["reporting_category"]
+            }
+        ),
+        20,
+        "manuscript occupied reporting categories",
+    )
+    require(len(manuscript_motif_rules), 6, "manuscript motif-rule rows")
+    require(
+        len(manuscript_expression_parameters),
+        7,
+        "manuscript expression-parameter rows",
     )
 
     require(len(pf01053), 6, "PF01053 resolved candidates")

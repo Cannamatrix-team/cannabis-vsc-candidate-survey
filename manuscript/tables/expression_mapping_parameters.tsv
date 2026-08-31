@@ -1,0 +1,8 @@
+stage	parameter	value
+search	program	blastp
+search	similarity_matrix	BLOSUM62
+search	e_value_maximum	0.001
+search	query_coverage_per_hsp_minimum_percent	80
+search	maximum_target_sequences_per_query	1
+analysis	primary_hsp_identity_percent	100
+analysis	primary_query_coverage_minimum_percent	80

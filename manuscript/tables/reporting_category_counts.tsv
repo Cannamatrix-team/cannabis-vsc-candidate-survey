@@ -1,0 +1,22 @@
+biochemical_context	table1_pre_search_target	reporting_category	pfam_profile_or_architecture	pipeline_slug	candidate_count
+Sulfur amino-acid and glutathione supply	OASTL	PF00291 PALP domain	PF00291	oastl	33
+Sulfur amino-acid and glutathione supply	SAMS	S-adenosylmethionine synthase	PF00438 + PF02772 + PF02773	sams	2
+Sulfur amino-acid and glutathione supply	GSH1	Glutamate-cysteine ligase	PF04107	gsh1	2
+Sulfur amino-acid and glutathione supply	CBL	PF01053 nearest-reference CBL	PF01053	cbl	2
+Sulfur amino-acid and glutathione supply	CGS	PF01053 nearest-reference CGS	PF01053	cgs	2
+Sulfur amino-acid and glutathione supply	GSH2	Glutathione synthetase	PF03199 + PF03917	gsh2	1
+Conjugation, transfer, and redox chemistry	UGT	UDPGT domain	PF00201	ugt	218
+Conjugation, transfer, and redox chemistry	GST	GST_N domain	PF02798	gst	83
+Conjugation, transfer, and redox chemistry	FMO	FMO-like domain	PF00743	fmo	40
+Conjugation, transfer, and redox chemistry	SULT	SULT domain	PF00685	sult	22
+Conjugation, transfer, and redox chemistry	Rhodanese	Rhodanese domain	PF00581	rhodanese	16
+Conjugation, transfer, and redox chemistry	GGT	GGT domain	PF01019	ggt	5
+Sulfur release and comparative reference architectures	Myrosinase	GH1 beta-glucosidase	PF00232	myrosinase	44
+Sulfur release and comparative reference architectures	Lachrymatory-factor synthase	Polyketide_cyc2 domain	PF10604	lf_synthase	8
+Sulfur release and comparative reference architectures	Alliinase	Alliinase/ACC-synthase-like	PF04863 + PF04864	alliinase	5
+Sulfur release and comparative reference architectures	MGL-Artocarpus, MGL-Cannabis, MGL-Durio	PF01053 nearest-reference MGL	PF01053	mgl	2
+Sulfur release and comparative reference architectures	CSCBL-like	no reporting category	PF01053	cscbl_like	0
+Oxylipin and volatile-product chemistry	AOS/HPL-motivated P450 search	P450 domain	PF00067	aos_hpl	359
+Oxylipin and volatile-product chemistry	ADH	ADH architecture	PF00107 + PF08240	adh	61
+Oxylipin and volatile-product chemistry	LOX	LOX architecture	PF00305 + PF01477	lox	30
+Oxylipin and volatile-product chemistry	AOC	AOC domain	PF06351	aoc	6
