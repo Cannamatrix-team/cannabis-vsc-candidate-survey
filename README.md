@@ -1,6 +1,6 @@
 # Cannabis VSC candidate survey
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21685901.svg)](https://doi.org/10.5281/zenodo.21685901)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21685900.svg)](https://doi.org/10.5281/zenodo.21685900)
 
 Supporting data for the manuscript:
 
@@ -10,7 +10,7 @@ Authors: Emanuel Maminakis, Logan Geffen, Kevelin Barbosa-Xavier, and Suliman Sh
 
 ## Status
 
-Version 0.1.0 is the first manuscript-supporting release and is archived on Zenodo at [10.5281/zenodo.21685901](https://doi.org/10.5281/zenodo.21685901).
+Version 0.2.0 is the current manuscript-supporting reproducibility release. All archived versions are collected under the Zenodo concept DOI [10.5281/zenodo.21685900](https://doi.org/10.5281/zenodo.21685900).
 
 ## Evidence package
 
@@ -146,10 +146,10 @@ This requires byte-identical agreement with the frozen reconciled-manuscript PNG
 
 ## Citation and Zenodo metadata
 
-`CITATION.cff` supplies GitHub-readable citation metadata and the versioned Zenodo DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived.
+`CITATION.cff` supplies GitHub-readable citation metadata, the current package version, and the Zenodo concept DOI. `.zenodo.json` supplies the metadata Zenodo uses when tagged GitHub releases are archived. Cite the version-specific DOI returned by Zenodo for the release used.
 
 ## License and integrity
 
-Original tables, documentation, and selection/arrangement in this repository are licensed under [CC BY 4.0](LICENSE). Third-party source materials retain their original terms as described in `THIRD_PARTY_NOTICE.md`.
+Original source code is licensed under the [MIT License](LICENSE). Original database contents, tables, documentation, and selection/arrangement are licensed under [CC BY 4.0](LICENSE-DATA.md). Third-party source materials retain their original terms as described in `THIRD_PARTY_NOTICE.md`.
 
 `SHA256SUMS` records SHA-256 checksums for every distributed file.

@@ -1,6 +1,6 @@
 # Third-party sources and attribution
 
-This repository combines Cannamatrix-created annotations and tables with selected material derived from public biological resources. The repository-level CC BY 4.0 license applies to Cannamatrix's original contributions and does not replace the terms attached to upstream material.
+This repository combines Cannamatrix-created software, annotations, and tables with selected material derived from public biological resources. The MIT license applies to Cannamatrix's original source code, and CC BY 4.0 applies to its original data and documentation. Neither license replaces the terms attached to upstream material.
 
 ## Cannabis GMO v1 protein models
 

@@ -1,11 +1,12 @@
 cff-version: 1.2.0
-message: "Please cite this dataset using the versioned Zenodo DOI."
+message: "Please cite the release using the Zenodo DOI for the version used."
 type: dataset
-title: "Supporting data for Computational Identification of Candidate Gene Families for Volatile Sulfur Compound Biosynthesis in Cannabis sativa Using Profile Hidden Markov Models"
+title: "Reproducibility package for Computational Identification of Candidate Gene Families for Volatile Sulfur Compound Biosynthesis in Cannabis sativa Using Profile Hidden Markov Models"
 abstract: >-
-  Query definitions, search assignments, staged validation results, retained
-  candidate sequences, expression cross-references, and PF01053 phylogenetic
-  artifacts supporting a survey of Cannabis sativa protein candidates.
+  Query definitions, analysis code, search assignments, staged validation
+  results, retained candidate sequences, expression cross-references, PF01053
+  phylogenetic artifacts, and manuscript presentation code supporting a survey
+  of Cannabis sativa protein candidates.
 authors:
   - family-names: Maminakis
     given-names: Emanuel
@@ -20,9 +21,9 @@ authors:
     given-names: Suliman
     affiliation: Cannamatrix Inc.
 repository-code: "https://github.com/Cannamatrix-team/cannabis-vsc-candidate-survey"
-doi: 10.5281/zenodo.21685901
+doi: 10.5281/zenodo.21685900
 license: CC-BY-4.0
-version: 0.1.0
+version: 0.2.0
 keywords:
   - Cannabis sativa
   - sulfur metabolism
