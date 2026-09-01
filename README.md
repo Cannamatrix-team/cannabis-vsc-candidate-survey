@@ -46,7 +46,7 @@ The source atlas is described by Barbosa-Xavier et al. (2024), DOI: [10.1111/ppl
 
 The underlying search and annotation artifacts came from CannamatrixAI commit `ca6a37a5240e8e0c85b29912d9136fc087cd7d1d` on branch `KB-VSC_pipeline_validation`.
 
-GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The source annotation dataset is available from Figshare at DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1). The complete 55,790-protein input proteome is not duplicated here; this package includes the 975 motif-stage sequences and the 941 final retained sequences.
+GMO v1 protein models originate from the Cannabis pangenome resource described by Lynch et al. (2025), DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0). The authors' [Michael Lab Cannabis pangenome portal](https://resources.michael.salk.edu/resources/cannabis_genomes/index.html) provides the genome and annotation files, including the exact [GMO v1 primary high-confidence protein FASTA](https://resources.michael.salk.edu/jbrowsers/data/csat/assemblies/GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta.gz). The complete 55,790-protein input proteome is not duplicated here; this package includes the 975 motif-stage sequences and the 941 final retained sequences.
 
 The 24 exact Pfam profiles and 13 UniProt reference sequences used by the search panel are preserved under `inputs/search_queries/`. These are only the search-specific assets, not complete copies of either database. See `THIRD_PARTY_NOTICE.md` for source-specific attribution and licensing.
 

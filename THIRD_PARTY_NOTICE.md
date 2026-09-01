@@ -7,9 +7,11 @@ This repository combines Cannamatrix-created annotations and tables with selecte
 `data/candidate_sequences_975.fasta` and `data/candidate_sequences_941.fasta` are filtered extracts of the GMO v1 primary high-confidence protein models. Candidate identifiers and derived tables also refer to those models.
 
 - Source publication: Lynch et al. (2025), *Nature*, DOI: [10.1038/s41586-025-09065-0](https://doi.org/10.1038/s41586-025-09065-0)
-- Source annotation data: *Cannabis Pangenome Annotation Data*, DOI: [10.25452/figshare.plus.25909024.v1](https://doi.org/10.25452/figshare.plus.25909024.v1)
-- Source collection: *Cannabis Pangenome*, DOI: [10.25452/figshare.plus.c.7248427.v1](https://doi.org/10.25452/figshare.plus.c.7248427.v1)
-- Source-data license: CC0 1.0 as stated on the Figshare record
+- Genome and annotation portal: [Michael Lab Cannabis pangenome assemblies and data](https://resources.michael.salk.edu/resources/cannabis_genomes/index.html)
+- Exact source file: [`GMO.v1.primary_high_confidence.proteins.fasta.gz`](https://resources.michael.salk.edu/jbrowsers/data/csat/assemblies/GMO/genes_v1/GMO.v1.primary_high_confidence.proteins.fasta.gz)
+- Verified source boundary: 55,790 protein records; decompressed SHA-256 `953fbdcb7f10cc02af10e39a8e4d23108b6854b4ea90d700bf2e24c5735d1da7`
+
+The Michael Lab portal does not state a separate license for this file. The repository-level license does not replace any upstream terms that apply to these protein models.
 
 ## UniProt reference proteins
 
